@@ -5,7 +5,6 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - fan trigger event
-    - auto-tile palette from new floor tilesheet
     - add wire platforms
     - auto-tile wires
     - add button for fans
@@ -13,6 +12,7 @@ emma to-do:
 done:
     - fan trigger only on player
     - add fan sprite 
+        - auto-tile palette from new floor tilesheet
     
 should: 
     - animate fan
