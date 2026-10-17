@@ -7,8 +7,10 @@ public class fan : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>();
-        print("fan ready");
-        if(!on) anim.StopPlayback();
+        if(!on){
+            anim.enabled = false;
+        }
+        
     }
 
     // Update is called once per frame
@@ -19,13 +21,7 @@ public class fan : MonoBehaviour
 
     void flip(){
         // This method turns it on if it is off, and off if it is on
-        if (on){
-            print("fan turned off");
-            anim.Play("fan-test");
-        } else {
-            print("fan turned off");
-            anim.StopPlayback();
-        }
+        anim.enabled = !anim.enabled;
         on = !on;
     }
 
