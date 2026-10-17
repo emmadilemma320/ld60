@@ -4,8 +4,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
 {
-    public InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
-    public InputAction vertical = InputSystem.actions.FindAction("Vertical");
+    public float walkSpeed;
+    public float jumpStrength;
+    public Follow camera;
+    readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
+    readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
     void Start()
     {
@@ -15,10 +18,12 @@ public class Player : MonoBehaviour
     {
         float H = horizontal.ReadValue<float>();
         float V = vertical.ReadValue<float>();
-        p.vX = H * 2.5f;
+        p.vX = H * walkSpeed;
         if (p.down && V > 0)
         {
-            p.vY = 5.5f;
+            p.vY = jumpStrength;
         }
+        p.Simulate();
+        camera.Simulate();
     }
 }
