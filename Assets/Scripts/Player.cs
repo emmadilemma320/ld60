@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
+    public InputAction vertical = InputSystem.actions.FindAction("Vertical");
+    public PhysicsObject p;
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        float H = horizontal.ReadValue<float>();
+        float V = vertical.ReadValue<float>();
+        p.vX = H * 2.5f;
+        if (p.down && V > 0)
+        {
+            p.vY = 5.5f;
+        }
     }
 }

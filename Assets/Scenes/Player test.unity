@@ -1397,6 +1397,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78776603d87534f058827e5c8ca50fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  horizontal:
+    m_Name: Horizontal
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: 388f2b77-c0fd-4f55-ae56-5fb7d6e587ee
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: bdb287e4-2f22-4d93-bd77-82d1e423487f
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 76fc3c7e-5759-47dd-84c4-aa7702c6f2cb
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 98035c59-80bb-40ef-a3aa-40b3cfae495f
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal
+      m_Flags: 8
+    m_Flags: 0
+    m_Priority: 0
+  vertical:
+    m_Name: Vertical
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: f66d0398-b35d-4dc5-b640-aec2dab80f01
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: a45fe1c7-22bf-436d-9208-97dba8d82d29
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: e9908808-0262-422e-8423-51ad39cbd467
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c2e6e065-6d9c-4768-8ef1-1e554b67f875
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical
+      m_Flags: 8
+    m_Flags: 0
+    m_Priority: 0
+  p: {fileID: 190733347}
 --- !u!1 &620317433
 GameObject:
   m_ObjectHideFlags: 0
