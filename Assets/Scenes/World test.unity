@@ -2293,6 +2293,7 @@ GameObject:
   - component: {fileID: 1429409641}
   - component: {fileID: 1429409640}
   - component: {fileID: 1429409643}
+  - component: {fileID: 1429409644}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2418,6 +2419,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1429409644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429409639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e29592139194d38b1b3e2b3530bda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Follow
+  follow: {fileID: 2125932225}
+  easing: 0.125
+  snap: 0
 --- !u!1 &2125932221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2468,7 @@ MonoBehaviour:
   walkSpeed: 4
   jumpStrength: 9
   jumpLength: 3
-  camera: {fileID: 0}
+  camera: {fileID: 1429409644}
   p: {fileID: 2125932223}
 --- !u!114 &2125932223
 MonoBehaviour:
