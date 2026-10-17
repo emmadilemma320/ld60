@@ -5,11 +5,6 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - fan trigger event
-    - add wire platforms
-    - auto-tile wires: 
-        - totally safe
-        - danger ends
-        - totally unsafe
     - add button for fans
     - fan blows player up
 
@@ -18,4 +13,9 @@ done:
     - add fan sprite 
         - auto-tile palette from new floor tilesheet
     - animate fan
+    - add wire platforms
     - allow for "built-in" fans which can also be stood on
+        - auto-tile wires: 
+        - totally safe
+        - danger ends
+        - totally unsafe (ish)
