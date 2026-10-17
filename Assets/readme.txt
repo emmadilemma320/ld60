@@ -7,6 +7,8 @@ emma to-do:
     - fan trigger event
     - add button for fans
     - fan blows player up
+    - button switches fan state
+
 
 done:
     - fan trigger only on player
@@ -19,3 +21,4 @@ done:
         - totally safe
         - danger ends
         - totally unsafe (ish)
+    - fan animation stop/start

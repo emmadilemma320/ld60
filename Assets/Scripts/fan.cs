@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class fan : MonoBehaviour
 {
+    public bool on;
+    private Animation anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    void Start(){
+        anim = this.gameObject.transform.GetChild(0).GetComponent<Animation>();
         print("fan ready");
+        if(!on) anim.Stop();
     }
 
     // Update is called once per frame
@@ -13,6 +16,19 @@ public class fan : MonoBehaviour
     {
         
     }
+
+    void flip(){
+        // This method turns it on if it is off, and off if it is on
+        if (on){
+            print("fan turned off");
+            anim.Play();
+        } else {
+            print("fan turned off");
+            anim.Stop();
+        }
+        on = !on;
+    }
+
 
     void OnTriggerEnter2D(Collider other){
         print("object entered");
