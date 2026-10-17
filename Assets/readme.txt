@@ -4,9 +4,7 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 
 emma to-do:
-    - animate fan
     - fan trigger event
-    - added fan physical collider to do (so player can stand on fan)
     - tile palette from new floor tilesheet
     - add wire platforms
     - add button for fans
@@ -15,3 +13,7 @@ done:
     - fan trigger only on player
     - add fan sprite 
     
+should: 
+    - animate fan
+could:
+    - allow for "built-in" fans which can also be stood on
