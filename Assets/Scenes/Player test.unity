@@ -1398,7 +1398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   walkSpeed: 4
-  jumpStrength: 10
+  jumpStrength: 9
+  jumpLength: 3
   camera: {fileID: 620317438}
   p: {fileID: 190733347}
 --- !u!1 &620317433
@@ -1554,7 +1555,6 @@ MonoBehaviour:
   follow: {fileID: 190733349}
   easing: 0.125
   snap: 0
-  min: 0
 --- !u!1 &875653903
 GameObject:
   m_ObjectHideFlags: 0

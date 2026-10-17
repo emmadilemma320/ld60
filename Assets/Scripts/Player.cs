@@ -6,7 +6,10 @@ public class Player : MonoBehaviour
 {
     public float walkSpeed;
     public float jumpStrength;
+    public int jumpLength;
     public Follow camera;
+    private int coyote = 0;
+    private int jumpCounter;
     readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
     readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
@@ -19,9 +22,30 @@ public class Player : MonoBehaviour
         float H = horizontal.ReadValue<float>();
         float V = vertical.ReadValue<float>();
         p.vX = H * walkSpeed;
-        if (p.down && V > 0)
+        coyote++;
+        jumpCounter--;
+        if (p.down)
+        {
+            coyote = 0;
+        }
+        if (coyote <= 4 && V > 0)
         {
             p.vY = jumpStrength;
+            coyote = 5;
+            jumpCounter = jumpLength;
+        }
+        else if (V > 0)
+        {
+            if (jumpCounter > 0)
+            {
+                p.vY = jumpStrength;
+            }
+            p.gravity = -0.75f;
+        }
+        else
+        {
+            jumpCounter = 0;
+            p.gravity = -1.25f;
         }
         p.Simulate();
         camera.Simulate();
