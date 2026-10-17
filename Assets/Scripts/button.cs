@@ -9,12 +9,11 @@ public class button : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         
     }
 
-    void OnTriggerEnter2D(Collider other){
+    void OnTriggerEnter(Collider other){
         print("object entered");
         if (other.gameObject.tag == "Player"){
             print("player entered area");
