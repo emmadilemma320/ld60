@@ -4,6 +4,7 @@ public class fan : MonoBehaviour
 {
     private Animator anim;
     public bool on;
+    public bool button_controlled;
     
     // For the fan on/off
     private const float FAN_SWITCH_TIME = 3f;
@@ -22,6 +23,7 @@ public class fan : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+        if (button_controlled) return;
         timer -= Time.deltaTime;
         if(timer <= 0) {
             flip();
