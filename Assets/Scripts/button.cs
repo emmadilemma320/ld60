@@ -13,7 +13,7 @@ public class button : MonoBehaviour
     {
         foreach(Transform fan in this.linked_fans){
                 print("\t"+fan);
-            fan.gameObject.GetComponent<fan>().button_controlled = true;
+            fan.gameObject.GetComponent<fan>().link();
         }
     }
 

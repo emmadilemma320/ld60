@@ -4,7 +4,7 @@ public class fan : MonoBehaviour
 {
     private Animator anim;
     public bool on;
-    public bool button_controlled;
+    private bool button_controlled;
     
     // For the fan on/off
     private const float FAN_SWITCH_TIME = 3f;
@@ -16,7 +16,6 @@ public class fan : MonoBehaviour
         if(!on){
             anim.enabled = false;
         }
-
         timer = FAN_SWITCH_TIME;
         
     }
@@ -35,6 +34,10 @@ public class fan : MonoBehaviour
         // This method turns it on if it is off, and off if it is on
         anim.enabled = !anim.enabled;
         on = !on;
+    }
+
+    public void link(){
+        button_controlled = true;
     }
 
 
