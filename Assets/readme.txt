@@ -6,7 +6,10 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 emma to-do:
     - fan trigger event
     - add wire platforms
-    - auto-tile wires
+    - auto-tile wires: 
+        - totally safe
+        - danger ends
+        - totally unsafe
     - add button for fans
 
 done:
