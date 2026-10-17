@@ -5,7 +5,7 @@ public class fan : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        print("fan ready");
     }
 
     // Update is called once per frame
@@ -14,9 +14,10 @@ public class fan : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter2D(Collider other){
+        print("object entered");
         if (other.gameObject.tag == "Player"){
-            print("weee!");
+            print("player entered area");
         }
     }
 }
