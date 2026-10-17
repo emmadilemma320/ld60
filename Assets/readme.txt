@@ -11,13 +11,11 @@ emma to-do:
         - danger ends
         - totally unsafe
     - add button for fans
+    - fan blows player up
 
 done:
     - fan trigger only on player
     - add fan sprite 
         - auto-tile palette from new floor tilesheet
-    
-should: 
     - animate fan
-could:
     - allow for "built-in" fans which can also be stood on
