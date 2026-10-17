@@ -15,7 +15,8 @@ public class fan : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        //if other.tag = "Player";
-        print("weee!");
+        if (other.gameObject.tag == "Player"){
+            print("weee!");
+        }
     }
 }
