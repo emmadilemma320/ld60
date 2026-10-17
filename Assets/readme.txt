@@ -8,6 +8,7 @@ emma to-do:
     - add button for fans
     - fan blows player up
     - button switches fan state
+    - update button sprite
 
 
 done:
