@@ -29,7 +29,7 @@ public class fan : MonoBehaviour
         }
     }
 
-    void flip(){
+    public void flip(){
         // This method turns it on if it is off, and off if it is on
         anim.enabled = !anim.enabled;
         on = !on;
@@ -37,9 +37,13 @@ public class fan : MonoBehaviour
 
 
     void OnTriggerEnter(Collider other){
+        // this will be the code that pushes the player up if the fan is on
         print("object entered");
         if (other.gameObject.tag == "Player"){
-            print("player entered area");
+            if (on){
+               print("player entered area"); 
+            }
+            
         }
     }
 }

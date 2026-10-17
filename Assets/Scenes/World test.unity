@@ -2338,6 +2338,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33167ec4d0419604eaa472bbba37cec6, type: 3}
+--- !u!4 &617167975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4437499133358395838, guid: 33167ec4d0419604eaa472bbba37cec6, type: 3}
+  m_PrefabInstance: {fileID: 617167974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &799903692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2402,6 +2407,18 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1848405915
       objectReference: {fileID: 0}
+    - target: {fileID: 4862570948466162551, guid: d96d23e79e0708345938e5a38fdb91b4, type: 3}
+      propertyPath: linked_buttons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862570948466162551, guid: d96d23e79e0708345938e5a38fdb91b4, type: 3}
+      propertyPath: 'linked_buttons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 837332551}
+    - target: {fileID: 4862570948466162551, guid: d96d23e79e0708345938e5a38fdb91b4, type: 3}
+      propertyPath: 'linked_buttons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 617167975}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2468,6 +2485,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33167ec4d0419604eaa472bbba37cec6, type: 3}
+--- !u!4 &837332551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4437499133358395838, guid: 33167ec4d0419604eaa472bbba37cec6, type: 3}
+  m_PrefabInstance: {fileID: 837332550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1429409639
 GameObject:
   m_ObjectHideFlags: 0
