@@ -5,7 +5,7 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - fan blows player up
-    - update button sprite
+    - update button sprite on button psuh
 
 
 done:
@@ -22,3 +22,4 @@ done:
     - fan animation stop/start
     - add button for fans
     - button switches fan state
+    - update button sprite 
