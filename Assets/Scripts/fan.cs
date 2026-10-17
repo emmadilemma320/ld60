@@ -23,7 +23,6 @@ public class fan : MonoBehaviour
     // Update is called once per frame
     void Update(){
         timer -= Time.deltaTime;
-        print("new time:"+timer);
         if(timer <= 0) {
             flip();
             timer = FAN_SWITCH_TIME;
