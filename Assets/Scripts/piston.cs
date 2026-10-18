@@ -9,8 +9,8 @@ public class piston : MonoBehaviour {
     public Boolean immeuble;
 
     private Boolean button_controlled;
-    public float timer;
-    public Boolean moving;
+    private float timer;
+    private Boolean moving;
     private Boolean up; // true if the piston is currently extended (default)
     
     public const float speed = 0.01f;
