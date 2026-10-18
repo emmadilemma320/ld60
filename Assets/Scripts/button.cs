@@ -13,7 +13,7 @@ public class button : MonoBehaviour
     {
         foreach(Transform fan in this.linked_fans){
                 print("\t"+fan);
-            fan.gameObject.GetComponent<fan>().link();
+            fan.gameObject.GetComponent<fan>().Link();
         }
     }
 
@@ -28,7 +28,7 @@ public class button : MonoBehaviour
         if (other.gameObject.tag == "Player"){
             print("player entered area");
             foreach(Transform fan in this.linked_fans){
-                fan.gameObject.GetComponent<fan>().flip();
+                fan.gameObject.GetComponent<fan>().Flip();
             }
         }
         

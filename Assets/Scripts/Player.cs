@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float jumpStrength;
     public int jumpLength;
     public Follow camera;
+    public bool fan;
     private int coyote = 0;
     private int jumpCounter;
     readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
@@ -46,6 +47,10 @@ public class Player : MonoBehaviour
         {
             jumpCounter = 0;
             p.gravity = -1.25f;
+        }
+        if (fan)
+        {
+            p.vY += 2f;
         }
         p.Simulate();
         camera.Simulate();

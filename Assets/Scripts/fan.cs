@@ -12,8 +12,8 @@ public class fan : MonoBehaviour
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
-        anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>();
-        if(!on){
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        if (!on){
             anim.enabled = false;
         }
         timer = FAN_SWITCH_TIME;
@@ -21,34 +21,48 @@ public class fan : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         if (button_controlled) return;
-        timer -= Time.deltaTime;
-        if(timer <= 0) {
-            flip();
+        timer -= Time.fixedDeltaTime;
+        if (timer <= 0) {
+            Flip();
             timer = FAN_SWITCH_TIME;
         }
     }
 
-    public void flip(){
+    public void Flip(){
         // This method turns it on if it is off, and off if it is on
         anim.enabled = !anim.enabled;
         on = !on;
     }
 
-    public void link(){
+    public void Link(){
         button_controlled = true;
     }
 
 
-    void OnTriggerEnter(Collider other){
-        // this will be the code that pushes the player up if the fan is on
-        print("object entered");
-        if (other.gameObject.tag == "Player"){
+    void OnCollisionEnter2D(Collision2D other){
+        if (other.gameObject.CompareTag("Player"))
+        {
             if (on){
-               print("player entered area"); 
+                other.gameObject.GetComponent<Player>().fan = true;
             }
-            
+        }
+    }
+    void OnCollisionStay2D(Collision2D other){
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (on){
+                other.gameObject.GetComponent<Player>().fan = true;
+            }
+        }
+    }
+    void OnCollisionExit2D(Collision2D other){
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (on){
+                other.gameObject.GetComponent<Player>().fan = false;
+            }
         }
     }
 }

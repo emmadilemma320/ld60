@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Up
+  - Fan
   layers:
   - Default
   - TransparentFX

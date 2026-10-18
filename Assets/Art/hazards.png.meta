@@ -164,10 +164,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 1, y: -8}
-        - {x: 1, y: 8}
-        - {x: 0, y: 8}
+      - - {x: -8, y: -8}
+        - {x: -8, y: -8}
+        - {x: -8, y: -8}
+        - {x: -8, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: 44d2daeb90bb85744858ddfb824fdeb6
@@ -286,10 +286,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: 0, y: -8}
-        - {x: 1, y: -8}
-        - {x: 1, y: 8}
-        - {x: 0, y: 8}
+      - - {x: -8, y: -8}
+        - {x: -8, y: -8}
+        - {x: -8, y: -8}
+        - {x: -8, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: aee03983e0731774d81f0901dde7a5d8
@@ -464,10 +464,10 @@ TextureImporter:
         - {x: 8, y: 0}
         - {x: 8, y: 1}
         - {x: 0, y: 1}
-      - - {x: 0, y: -8}
-        - {x: 1, y: -8}
-        - {x: 1, y: 0}
-        - {x: 0, y: 0}
+      - - {x: 2, y: 0}
+        - {x: 2, y: 0}
+        - {x: 2, y: 0}
+        - {x: 2, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 393f7e9a42f3c4f408705148fd1521f1
@@ -494,10 +494,10 @@ TextureImporter:
         - {x: 1, y: 0}
         - {x: 1, y: 1}
         - {x: -8, y: 1}
-      - - {x: 0, y: -8}
-        - {x: 1, y: -8}
-        - {x: 1, y: 0}
-        - {x: 0, y: 0}
+      - - {x: -4, y: 0}
+        - {x: -4, y: 0}
+        - {x: -4, y: 0}
+        - {x: -4, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 5e8a632ad3b998141ae4a15f1f363da9
@@ -519,7 +519,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -1}
+        - {x: 8, y: -1}
+        - {x: 8, y: 0}
+        - {x: -8, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 88ba1a2f71fdc734e87aa3957f7c4648
@@ -541,7 +545,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -2, y: -1}
+        - {x: 8, y: -1}
+        - {x: 8, y: 0}
+        - {x: -2, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 5e8b621f4b198c0489b9442b6540e449
@@ -612,10 +620,10 @@ TextureImporter:
         - {x: 8, y: -1}
         - {x: 8, y: 0}
         - {x: 0, y: 0}
-      - - {x: 0, y: 0}
-        - {x: 1, y: 0}
-        - {x: 1, y: 8}
-        - {x: 0, y: 8}
+      - - {x: 3, y: -1}
+        - {x: 3, y: -1}
+        - {x: 3, y: -1}
+        - {x: 3, y: -1}
       tessellationDetail: 0
       bones: []
       spriteID: 5528fe28fd2a9954085c4bc2fd2e2348
@@ -639,9 +647,9 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: 0, y: -1}
-        - {x: 1, y: -1}
-        - {x: 1, y: 8}
-        - {x: 0, y: 8}
+        - {x: 0, y: -1}
+        - {x: 0, y: -1}
+        - {x: 0, y: -1}
       - - {x: -8, y: -1}
         - {x: 0, y: -1}
         - {x: 0, y: 0}
@@ -667,7 +675,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -1}
+        - {x: 2, y: -1}
+        - {x: 2, y: 0}
+        - {x: -8, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: e20f4740589096345b4be32c7f9b8ffe
@@ -689,7 +701,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -1}
+        - {x: 8, y: -1}
+        - {x: 8, y: 0}
+        - {x: -8, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: b616660b8a3f32e44957ad3fb86fb86d
@@ -711,7 +727,11 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -8, y: -1}
+        - {x: 8, y: -1}
+        - {x: 8, y: 0}
+        - {x: -8, y: 0}
       tessellationDetail: 0
       bones: []
       spriteID: 87884919f60b2674b8b23a96607b650c
