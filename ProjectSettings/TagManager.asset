@@ -52,6 +52,9 @@ TagManager:
   - name: foreground
     uniqueID: 2446561381
     locked: 0
+  - name: piston
+    uniqueID: 3343325195
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
