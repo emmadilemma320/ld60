@@ -5,7 +5,7 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - update button sprite on button push
-    - piston movement
+    - fix upside piston movement
     - piston button connection
 
 
@@ -26,3 +26,4 @@ done:
     - update button sprite 
     - fan blows player up (ty kent)
     - button turn on/off fan
+    - piston movement (initial)
