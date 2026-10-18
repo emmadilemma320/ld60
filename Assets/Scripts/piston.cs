@@ -85,7 +85,7 @@ public class piston : MonoBehaviour {
         immeuble = false;
     }
 
-    public void button_pushed() {
+    public void move() {
         if (!moving) {
             moving = true;
         }
