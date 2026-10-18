@@ -8,12 +8,14 @@ public class button : MonoBehaviour
     public List<Transform> linked_items;
     private List<fan> linked_fans;
     private List<piston> linked_pistons;
+    private List<sparks> linked_sparks;
     UnityEvent button_push;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         linked_fans = new List<fan>();
         linked_pistons = new List<piston>();
+        linked_sparks = new List<sparks>();
 
         foreach(Transform item in this.linked_items){
             if(item.gameObject.TryGetComponent<fan>(out fan f)) {
@@ -24,6 +26,10 @@ public class button : MonoBehaviour
                 //print("successfully connected "+p+" to button "+name);
                 linked_pistons.Add(p);
                 p.Link();
+            } else if(item.gameObject.TryGetComponent<sparks>(out sparks s)) {
+                print("successfully connected "+p+" to button "+name);
+                linked_sparks.Add(s);
+                s.Link();
             }
         }
     }
