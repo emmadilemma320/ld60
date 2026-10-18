@@ -26,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 102747038556137202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 2, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 411315258681060047}
+  m_Father: {fileID: 4075602716867589799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2470306390184858399
 SpriteRenderer:
@@ -77,9 +77,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -951642101
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2738a6b751b469e4bb0233c06183aca8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,11 +120,13 @@ Transform:
   m_GameObject: {fileID: 261636998962354868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 411315258681060047}
+  m_Children:
+  - {fileID: 2106252383061692246}
+  - {fileID: 8043811544321166848}
+  m_Father: {fileID: 1820864618403459460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6307241750864721674
 SpriteRenderer:
@@ -173,7 +175,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: b978e1fd8b0690b4d9a4c6ef6902a538, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,9 +311,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1820864618403459460}
-  - {fileID: 4075602716867589799}
-  - {fileID: 2106252383061692246}
-  - {fileID: 8043811544321166848}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8657714146183361809
@@ -359,9 +358,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -951642101
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 9e69b5190b5800641b8f628d9f517726, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -400,11 +399,11 @@ Transform:
   m_GameObject: {fileID: 4042283936296015039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 2, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 411315258681060047}
+  m_Father: {fileID: 4075602716867589799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8917490589774458202
 SpriteRenderer:
@@ -451,9 +450,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -951642101
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2738a6b751b469e4bb0233c06183aca8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -495,7 +494,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4075602716867589799}
   m_Father: {fileID: 411315258681060047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4276273689167265235
@@ -543,8 +543,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -951642101
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: df138ed1dfadebc4ca6225a8c9fb013a, type: 3}
