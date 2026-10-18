@@ -80,8 +80,14 @@ public class piston : MonoBehaviour {
         }
     }
 
-    void Link() {
+    public void Link() {
         button_controlled = true;
         immeuble = false;
+    }
+
+    public void button_pushed() {
+        if (!moving) {
+            moving = true;
+        }
     }
 }

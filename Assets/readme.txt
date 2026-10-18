@@ -6,6 +6,7 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 emma to-do:
     - update button sprite on button push
     - piston button connection
+    - add background
 
 
 done:
