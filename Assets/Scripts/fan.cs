@@ -17,7 +17,6 @@ public class fan : MonoBehaviour
             anim.enabled = false;
         }
         timer = FAN_SWITCH_TIME;
-        
     }
 
     // Update is called once per frame
@@ -60,9 +59,7 @@ public class fan : MonoBehaviour
     void OnCollisionExit2D(Collision2D other){
         if (other.gameObject.CompareTag("Player"))
         {
-            if (on){
-                other.gameObject.GetComponent<Player>().fan = false;
-            }
+            other.gameObject.GetComponent<Player>().fan = false;
         }
     }
 }
