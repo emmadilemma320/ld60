@@ -57,8 +57,6 @@ public class piston : MonoBehaviour {
                         // we turn 'moving' to off and switch the 'up' variable
                         up = false;
                         moving = false;
-                        //timer = piston_rest_time;
-                        if(name=="piston (1)") print("done going down");
                     } else { // otherwise we move the platform
                         new_y = Math.Max(platform.localPosition.y - speed, platform_min);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
@@ -73,15 +71,12 @@ public class piston : MonoBehaviour {
                     if (platform.localPosition.y >= platform_max) {
                         up = true;
                         moving = false;
-                        //timer = piston_rest_time;
-                        if(name=="piston (1)") print(name+"done going up");
                     } else {
                         new_y = Math.Min(platform.localPosition.y + speed, platform_max);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
                     }
                 }
             }
-            if(name=="piston (1)") print(name+" new positions:\n\tmiddle: "+middle.localPosition+", platform: "+platform.localPosition);
         }
     }
 
