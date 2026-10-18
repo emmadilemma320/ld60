@@ -21,9 +21,10 @@ public class Player : MonoBehaviour
     readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
     readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
+    private Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
     void update_imunity_timer(){
         if (imunityTimerTimeLeft > 0){
@@ -36,6 +37,21 @@ public class Player : MonoBehaviour
         update_imunity_timer();
         float H = horizontal.ReadValue<float>();
         float V = vertical.ReadValue<float>();
+        
+        anim.SetFloat("yVelocity", p.vY);
+        anim.SetFloat("Magnitude", Mathf.Abs(p.vX));
+
+        Vector3 localScale = transform.localScale;
+        if (p.vX >= 0.1  && localScale.x == -1f){ // Flip to right
+            localScale.x = 1f;
+            transform.localScale = localScale;
+        }else if (p.vX < -0.1  && localScale.x == 1f){ // Flip to left
+            localScale.x = -1f;
+            transform.localScale = localScale;
+        }
+        
+        
+
         p.vX = H * walkSpeed;
         coyote++;
         jumpCounter--;
