@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class sparks : MonoBehaviour
 {
-    public Boolean on;
+    public Boolean on = true;
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Player") && on)

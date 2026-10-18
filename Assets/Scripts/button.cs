@@ -51,6 +51,9 @@ public class button : MonoBehaviour
                 //print("turned on piston "+p);
                 p.move();
             }
+            foreach(sparks s in this.linked_sparks) {
+                s.toggle();
+            }
         }
         
     }
