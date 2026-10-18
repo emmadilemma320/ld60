@@ -4,11 +4,8 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 
 emma to-do:
-    - fan trigger event
-    - add button for fans
     - fan blows player up
-    - button switches fan state
-    - update button sprite
+    - update button sprite on button psuh
 
 
 done:
@@ -23,3 +20,6 @@ done:
         - danger ends
         - totally unsafe (ish)
     - fan animation stop/start
+    - add button for fans
+    - button switches fan state
+    - update button sprite 
