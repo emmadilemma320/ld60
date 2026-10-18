@@ -10,7 +10,7 @@ public class piston : MonoBehaviour {
 
     private Boolean button_controlled;
     public float timer;
-    private Boolean moving;
+    public Boolean moving;
     private Boolean up; // true if the piston is currently extended (default)
     
     public const float speed = 0.01f;
@@ -53,12 +53,12 @@ public class piston : MonoBehaviour {
                     middle.localPosition = new Vector3(middle.localPosition.x, new_y, middle.localPosition.z);
                 } else {
                     // if the middle and platform are both in place, then the piston is done moving up/down
-                    if (platform.localPosition.y <= platform_min * this.transform.localScale.y){
+                    if (platform.localPosition.y <= platform_min){
                         // we turn 'moving' to off and switch the 'up' variable
                         up = false;
                         moving = false;
                         //timer = piston_rest_time;
-                        //if(name=="piston (1)") print("done going down");
+                        if(name=="piston (1)") print("done going down");
                     } else { // otherwise we move the platform
                         new_y = Math.Max(platform.localPosition.y - speed, platform_min);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
@@ -70,18 +70,18 @@ public class piston : MonoBehaviour {
                     new_y = Math.Min(middle.localPosition.y + speed, middle_max);
                     middle.localPosition = new Vector3(middle.localPosition.x, new_y, middle.localPosition.z);
                 } else {
-                    if (platform.localPosition.y >= platform_max ) {
+                    if (platform.localPosition.y >= platform_max) {
                         up = true;
                         moving = false;
                         //timer = piston_rest_time;
-                        //if(name=="piston (1)") print(name+"done going up");
+                        if(name=="piston (1)") print(name+"done going up");
                     } else {
                         new_y = Math.Min(platform.localPosition.y + speed, platform_max);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
                     }
                 }
             }
-            //if(name=="piston (1)") print(name+" new positions:\n\tmiddle: "+middle.localPosition+", platform: "+platform.localPosition);
+            if(name=="piston (1)") print(name+" new positions:\n\tmiddle: "+middle.localPosition+", platform: "+platform.localPosition);
         }
     }
 
