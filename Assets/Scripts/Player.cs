@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         {
             coyote = 0;
         }
-        if (coyote <= 4 && V > 0)
+        if (coyote <= 4 && V > 0 && p.vY <= 0.25f)
         {
             p.vY = jumpStrength;
             coyote = 5;
