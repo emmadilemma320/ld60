@@ -5,7 +5,6 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - update button sprite on button push
-    - piston button connection
     - add background
 
 
@@ -28,3 +27,5 @@ done:
     - button turn on/off fan
     - piston movement (initial)
     - fix upside piston movement
+    - piston button connection
+    - link sparks to buttons
