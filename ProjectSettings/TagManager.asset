@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Up
   - Fan
+  - Sparks
   layers:
   - Default
   - TransparentFX
