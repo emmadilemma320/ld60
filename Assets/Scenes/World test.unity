@@ -4081,7 +4081,7 @@ Tilemap:
     m_Data: {fileID: 1758819010, guid: 17e75a251e775ab41a301dfa64a3a1e5, type: 3}
   - serializedVersion: 2
     m_RefCount: 0
-    m_Data: {fileID: 1176356890, guid: 17e75a251e775ab41a301dfa64a3a1e5, type: 3}
+    m_Data: {fileID: -1126395073, guid: 17e75a251e775ab41a301dfa64a3a1e5, type: 3}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 322
@@ -4223,6 +4223,10 @@ PrefabInstance:
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: immeuble
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: piston_rest_time
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4459,6 +4463,10 @@ PrefabInstance:
     - target: {fileID: 1231698647958930812, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: m_Name
       value: piston (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: piston_rest_time
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
