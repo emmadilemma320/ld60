@@ -4,6 +4,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
 {
+    public int max_health;
+    public int health;
+    public bool imune_from_damage = false;
+    float imunityTimerDuration = 5.5f;
+    float imunityTimerTimeLeft = 0;
+
+
     public float walkSpeed;
     public float jumpStrength;
     public int jumpLength;
@@ -18,8 +25,15 @@ public class Player : MonoBehaviour
     {
         
     }
+    void update_imunity_timer(){
+        if (imunityTimerTimeLeft > 0){
+            imunityTimerTimeLeft -= Time.deltaTime;
+        }
+    }
+
     void FixedUpdate()
     {
+        update_imunity_timer();
         float H = horizontal.ReadValue<float>();
         float V = vertical.ReadValue<float>();
         p.vX = H * walkSpeed;
@@ -54,5 +68,18 @@ public class Player : MonoBehaviour
         }
         p.Simulate();
         camera.Simulate();
+    }
+
+    public void take_damage(string damage_type){
+        if (imunityTimerTimeLeft <= 0){
+            if (damage_type == "sparks"){
+                health -=1;
+                Debug.Log("Take damage from sparks");
+                imunityTimerTimeLeft = imunityTimerDuration;
+            }
+            else{
+                Debug.Log("Warning: Not taking damage since damge type unknown");
+            }
+        }
     }
 }
