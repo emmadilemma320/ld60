@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1401441079475805063}
   - component: {fileID: 4651390283007677738}
   m_Layer: 0
-  m_Name: halfplatformpiston
+  m_Name: platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,6 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc7301fe2d78bb4599d3d05763fae60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  piston_rest_time: 3
+  speed: 5
   immeuble: 0
 --- !u!1 &4042283936296015039
 GameObject:
@@ -490,7 +492,7 @@ GameObject:
   - component: {fileID: 1820864618403459460}
   - component: {fileID: 4276273689167265235}
   m_Layer: 0
-  m_Name: pistonmiddle
+  m_Name: middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
