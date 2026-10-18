@@ -18,16 +18,16 @@ public class button : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         
     }
 
-    void OnTriggerEnter(Collider other){
+    void OnCollisionEnter2D(Collision2D other){
         // when the button is pushed, it will send out a signal to all linked fans that they 
-        print("object entered");
-        if (other.gameObject.tag == "Player"){
+        if (other.gameObject.CompareTag("Player")){
             print("player entered area");
             foreach(Transform fan in this.linked_fans){
+                print("flipped fan"+fan);
                 fan.gameObject.GetComponent<fan>().Flip();
             }
         }
