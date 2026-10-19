@@ -7,6 +7,8 @@ using UnityEngine;
 public class sparks : MonoBehaviour
 {
     public Boolean on = true;
+    private Animator anim;
+    private SpriteRenderer sprite;
 
     public float spark_rest_time = 2f;
     public Boolean on_timer;
@@ -18,7 +20,15 @@ public class sparks : MonoBehaviour
 
 
     void Start() {
+        print(name+" starting");
         timer = spark_rest_time;
+        anim = gameObject.transform.GetComponent<Animator>();
+        sprite = gameObject.transform.GetComponent<SpriteRenderer>();
+
+        if (!on){
+            anim.enabled = false;
+            sprite.enabled = false;
+        }
 
         StartCoroutine(DelayedAudioLoadIn());
 
@@ -60,12 +70,14 @@ public class sparks : MonoBehaviour
         // called when linked with a button
         // allows the sparks to do stuff in response 
         // (i use it to turn off timers in my fans&pistons)
-        on_timer = true;
+        on_timer = false;
     }
 
     [ContextMenu("Toggle")]
     public void toggle() {
         on = !on;
+        anim.enabled = !anim.enabled;
+        sprite.enabled = !sprite.enabled;
 
         //ToggleBuzzSfx();
         // NOTE TO TEAM:
