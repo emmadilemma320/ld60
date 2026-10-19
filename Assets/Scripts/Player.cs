@@ -1,6 +1,5 @@
 using FMODUnity;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
 
@@ -29,8 +28,6 @@ public class Player : MonoBehaviour
     public bool fan;
     private int coyote = 0;
     private int jumpCounter;
-    //readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
-    //readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
 
     private Animator anim;
