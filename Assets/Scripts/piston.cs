@@ -7,6 +7,7 @@ public class piston : MonoBehaviour {
     public float piston_rest_time = 3f;
     //public float speed = 0.1f;
     public Boolean immeuble;
+    public float speed_multi = 1f;
 
     private Boolean button_controlled;
     private float timer;
@@ -49,7 +50,7 @@ public class piston : MonoBehaviour {
                 if(middle.localPosition.y > middle_min) {
                     // if the middle part is not in position yet, we keep moving it
                     // if the new value is now *less* than the min, we snap it to the min
-                    new_y = Math.Max(middle.localPosition.y - speed, middle_min);
+                    new_y = Math.Max(middle.localPosition.y - speed*speed_multi, middle_min);
                     middle.localPosition = new Vector3(middle.localPosition.x, new_y, middle.localPosition.z);
                 } else {
                     // if the middle and platform are both in place, then the piston is done moving up/down
@@ -58,21 +59,21 @@ public class piston : MonoBehaviour {
                         up = false;
                         moving = false;
                     } else { // otherwise we move the platform
-                        new_y = Math.Max(platform.localPosition.y - speed, platform_min);
+                        new_y = Math.Max(platform.localPosition.y - speed*speed_multi, platform_min);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
                     }
                 } 
             } else {
                 if (middle.localPosition.y < middle_max) {
                     // if it is now *over* the max, we snap it to the max
-                    new_y = Math.Min(middle.localPosition.y + speed, middle_max);
+                    new_y = Math.Min(middle.localPosition.y + speed*speed_multi, middle_max);
                     middle.localPosition = new Vector3(middle.localPosition.x, new_y, middle.localPosition.z);
                 } else {
                     if (platform.localPosition.y >= platform_max) {
                         up = true;
                         moving = false;
                     } else {
-                        new_y = Math.Min(platform.localPosition.y + speed, platform_max);
+                        new_y = Math.Min(platform.localPosition.y + speed*speed_multi, platform_max);
                         platform.localPosition = new Vector3(platform.localPosition.x, new_y, platform.localPosition.z);
                     }
                 }
