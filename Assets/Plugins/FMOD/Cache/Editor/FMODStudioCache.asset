@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6520334853212567244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BuzzLoop
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/BuzzLoop
+  Guid:
+    Data1: -1804868988
+    Data2: 1294472298
+    Data3: -2072058994
+    Data4: -1386634512
+  Banks:
+  - {fileID: 2858548278063047476}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23500
 --- !u!114 &-6335080639613510404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,13 +299,14 @@ MonoBehaviour:
   - {fileID: 3717467522026097090}
   - {fileID: 1800206061901153279}
   - {fileID: -6335080639613510404}
+  - {fileID: -6520334853212567244}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2559881652678735795}
   StringsBanks:
   - {fileID: 6278097490489104474}
   cacheVersion: 131861
-  cacheTime: 639279661766534093
+  cacheTime: 639279927456112042
   SerializableEventsDict:
   - key: event:/Background Music
     index: 0
@@ -298,6 +326,8 @@ MonoBehaviour:
     index: 7
   - key: event:/Death
     index: 8
+  - key: event:/BuzzLoop
+    index: 9
 --- !u!114 &110157360104271167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,8 +349,8 @@ MonoBehaviour:
   Banks:
   - {fileID: 2858548278063047476}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -457,7 +487,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639279661766534093
+  lastModified: 639279927456112042
   FileSizes: []
   Exists: 1
 --- !u!114 &3717467522026097090
@@ -637,10 +667,10 @@ MonoBehaviour:
   Path: FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639279580486170237
+  lastModified: 639279927455856074
   FileSizes:
   - Name: 
-    Value: 1212
+    Value: 1258
   Exists: 1
 --- !u!114 &7300500977693446851
 MonoBehaviour:
@@ -684,6 +714,6 @@ MonoBehaviour:
   Path: FMOD/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639279661766468963
+  lastModified: 639279927456024205
   FileSizes: []
   Exists: 1
