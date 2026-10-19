@@ -71,17 +71,17 @@ public class fan : MonoBehaviour
     {
 
 
-        fanSound = FMODUnity.RuntimeManager.CreateInstance(fanEventPath);
-        fanSound.setVolume(0f); // mute before initializing
+        fanSound = RuntimeManager.CreateInstance(fanEventPath);
+
+        fanSound.setVolume(0f); 
 
         RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);
-        // documentation says rigidbody can be a passed argument, but I think that's for velocity which shoulnd't matter here
 
         Debug.Log(transform.position);
 
         Debug.Log(fanSound);
 
-        fanSound.start(); // Is this how it works?
+        fanSound.start(); 
 
     }
 
