@@ -869,7 +869,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -468022299
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -5777,8 +5777,6 @@ MonoBehaviour:
   dashSpeed: 12
   dashDuration: 0.5
   dashRotationSpeed: 1080
-  immunityTimerDuration: 2
-  immunityTimerTimeLeft: 0
   walkSpeed: 4
   jumpStrength: 9
   jumpLength: 3
@@ -5867,7 +5865,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2123921835
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8834281783547058729, guid: dddeec44ae417714aab62e44c037d2df, type: 3}
@@ -5890,7 +5888,7 @@ Transform:
   m_GameObject: {fileID: 2125932221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.21, y: 1.36, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6100,5 +6098,3 @@ SceneRoots:
   - {fileID: 2125932225}
   - {fileID: 617167974}
   - {fileID: 624890763}
-  - {fileID: 531278258}
-  - {fileID: 660030453}
