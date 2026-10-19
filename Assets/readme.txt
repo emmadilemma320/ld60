@@ -4,7 +4,6 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 
 emma to-do:
-    - update button sprite on button push
     - add big red button
     - add secondary area
     - add win condition
@@ -36,3 +35,4 @@ done:
     - link sparks to buttons
     - add background
     - add timer to sparks
+    - update button sprite on button push (ty julian)
