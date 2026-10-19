@@ -8,6 +8,7 @@ public class piston : MonoBehaviour {
     //public float speed = 0.1f;
     public Boolean immeuble;
     public float speed_multi = 1f;
+    public Boolean start_up;
 
     private Boolean button_controlled;
     private float timer;
@@ -28,11 +29,10 @@ public class piston : MonoBehaviour {
     void Start() {
         // variable set-up
         timer = piston_rest_time;
-        moving = false; up = true;
+        moving = start_up; up = true;
 
         middle = this.transform.GetChild(0);
         platform = middle.GetChild(0);
-
     }
 
    private float new_y;
