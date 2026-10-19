@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     float imunityTimerDuration = 5.5f;
     float imunityTimerTimeLeft = 0;
 
+    public float dashSpeed = 50;
+    public float dashDuration = 0.75f;
+    public float dashRotationSpeed = 6.14f; // In degrees
+    float dashTimeLeft = 0;
+    float dashDirection = 0;
 
     public float walkSpeed;
     public float jumpStrength;
@@ -31,15 +36,38 @@ public class Player : MonoBehaviour
             imunityTimerTimeLeft -= Time.deltaTime;
         }
     }
-
+    void update_dash_timer(){
+        if (dashTimeLeft > 0){
+            dashTimeLeft -= Time.deltaTime;
+            transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
+            if (dashTimeLeft <= 0.0001){// end dash
+                anim.SetTrigger("DashEnd");
+                p.vX = dashDirection * walkSpeed;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+        }
+    }
+    public void Dash(InputAction.CallbackContext context){
+        // If dash action and not already in dash
+        if (context.performed && dashTimeLeft <=0){
+            dashDirection = transform.localScale.x;
+     
+            dashTimeLeft = dashDuration;
+            anim.SetTrigger("Dash");
+            Debug.Log("Dash");
+        }
+    }
     void FixedUpdate()
     {
         update_imunity_timer();
+        update_dash_timer();
         float H = horizontal.ReadValue<float>();
         float V = vertical.ReadValue<float>();
         
+        anim.SetFloat("DashTimeLeft", dashTimeLeft);
         anim.SetFloat("yVelocity", p.vY);
         anim.SetFloat("Magnitude", Mathf.Abs(p.vX));
+        
 
         Vector3 localScale = transform.localScale;
         if (p.vX >= 0.1  && localScale.x == -1f){ // Flip to right
@@ -51,8 +79,13 @@ public class Player : MonoBehaviour
         }
         
         
-
-        p.vX = H * walkSpeed;
+        
+        if (dashTimeLeft > 0){
+            p.vX = dashDirection * dashSpeed;
+        }else{
+            p.vX = H * walkSpeed;
+        }
+        
         coyote++;
         jumpCounter--;
         if (p.down)
