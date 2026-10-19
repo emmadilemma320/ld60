@@ -11,6 +11,7 @@ public class button : MonoBehaviour
     private List<fan> linked_fans;
     private List<piston> linked_pistons;
     private List<sparks> linked_sparks;
+    private Player player;
     UnityEvent button_push;
 
     [SerializeField] Sprite ButtonUp;
@@ -22,6 +23,7 @@ public class button : MonoBehaviour
     EventReference switchOn;
     EventReference switchOff;
     bool pressed = false;
+    bool is_big_red_button = false;
 
     string switchOnPath = "event:/Button Down";
     string switchOffPath = "event:/Button Up";
@@ -44,9 +46,12 @@ public class button : MonoBehaviour
                 linked_pistons.Add(p);
                 p.Link();
             } else if(item.gameObject.TryGetComponent<sparks>(out sparks s)) {
-                print("successfully connected "+p+" to button "+name);
+                //print("successfully connected "+p+" to button "+name);
                 linked_sparks.Add(s);
                 s.Link();
+            } else if(item.gameObject.TryGetComponent<Player>(out Player pl)) {
+                player = pl;
+                is_big_red_button = true;
             }
         }
 
@@ -91,6 +96,7 @@ public class button : MonoBehaviour
             foreach(sparks s in this.linked_sparks) {
                 s.toggle();
             }
+            if(is_big_red_button) player.Win();
         }
         
     }

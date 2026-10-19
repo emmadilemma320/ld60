@@ -228,6 +228,7 @@ public class Player : MonoBehaviour
 
     public void Win() // Call this when a win condition is met!
     {
+       print("win called");
         SceneManager.LoadScene("Win");
     }
 

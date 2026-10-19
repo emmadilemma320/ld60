@@ -20,7 +20,7 @@ public class sparks : MonoBehaviour
 
 
     void Start() {
-        print(name+" starting");
+        //print(name+" starting");
         timer = spark_rest_time;
         anim = gameObject.transform.GetComponent<Animator>();
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
