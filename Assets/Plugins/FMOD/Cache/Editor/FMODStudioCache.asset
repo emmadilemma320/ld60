@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639279524612307802
+  lastModified: 639279553399858034
   FileSizes: []
   Exists: 1
 --- !u!114 &-5349589459106225046
@@ -170,7 +170,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -2133029718727861162}
   cacheVersion: 131861
-  cacheTime: 639279524612307802
+  cacheTime: 639279553399858034
   SerializableEventsDict:
   - key: event:/Background Music
     index: 0
@@ -255,12 +255,12 @@ MonoBehaviour:
     Data4: 2044497892
   Banks:
   - {fileID: -5775175365555866596}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 4
   Length: 0
 --- !u!114 &5122008583216690433
 MonoBehaviour:

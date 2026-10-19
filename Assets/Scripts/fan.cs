@@ -1,4 +1,6 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class fan : MonoBehaviour
 {
@@ -9,7 +11,17 @@ public class fan : MonoBehaviour
     // For the fan on/off
     public float fan_time = 3f;
     private float timer;
-    
+
+    [Header("FMOD stuff ugh:")]
+    private EventInstance fanSound;
+    private string fanEventPath = "event:/Fan";
+    [SerializeField] float fanMaxVolume = 1f;
+
+    //Camera camera;
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
@@ -17,6 +29,10 @@ public class fan : MonoBehaviour
             anim.enabled = false;
         }
         timer = fan_time;
+
+        InitializeFanSound();
+
+        //camera = FindAnyObjectByType<Camera>();
     }
 
     // Update is called once per frame
@@ -30,10 +46,47 @@ public class fan : MonoBehaviour
     }
 
     public void Flip(){
+
+        //Debug.Log("flipping");
+
         // This method turns it on if it is off, and off if it is on
         anim.enabled = !anim.enabled;
         on = !on;
+
+        if (on)
+        {
+            fanSound.setVolume(1f);
+            //Debug.Log("Unmuting Fan!");
+        }
+        else if (!on)
+        {
+            fanSound.setVolume(0f); // MUTE
+            //Debug.Log("Muting Fan!");
+
+        }
+
     }
+
+    void InitializeFanSound()
+    {
+
+
+        fanSound = FMODUnity.RuntimeManager.CreateInstance(fanEventPath);
+        fanSound.setVolume(0f); // mute before initializing
+
+        RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);
+        // documentation says rigidbody can be a passed argument, but I think that's for velocity which shoulnd't matter here
+
+        Debug.Log(transform.position);
+
+        Debug.Log(fanSound);
+
+        fanSound.start(); // Is this how it works?
+
+    }
+
+
+    
 
     public void Link(){
         button_controlled = true;
