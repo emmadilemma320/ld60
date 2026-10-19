@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public Sprite healthOn;
     public Sprite healthOff;
     public bool imune_from_damage = false;
-
     float immunityTimerDuration = 5.5f;
     float immunityTimerTimeLeft = 0;
 
@@ -141,6 +140,12 @@ public class Player : MonoBehaviour
             else{
                 Debug.Log("Warning: Not taking damage since damge type unknown");
             }
+        }
+        if (health == 0)
+        {
+            health = 3;
+            p.pX = 0;
+            p.pY = 0;
         }
     }
 
