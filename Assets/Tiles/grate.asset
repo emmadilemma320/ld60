@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08ceb78e3b2495b8d808a5860e66794, type: 3}
+  m_Name: grate
+  m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.Tilemaps.AutoTile
+  m_DefaultSprite: {fileID: -495311891, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_MaskType: 1
+  m_Random: 0
+  m_PhysicsShapeCheck: 0
+  m_AutoTileDictionary:
+    keyData: b0010000ff000000fb010000fe010000b60100003f0000001b000000360000003800000018000000db00000030000000ff010000f8010000d8000000bf010000u
+    valueData:
+    - spriteList:
+      - {fileID: 1488483629, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -861096443, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -950663489, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -461049289, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -903060730, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -1244009038, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: 1832308570, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -1030890552924517081, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -1704586106, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: 212336661, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: 2120474996, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -1042394407, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -495311891, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: 1664557184, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -754884702, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+    - spriteList:
+      - {fileID: -570210786, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+      textureList:
+      - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+  m_TextureList:
+  - {fileID: 2800000, guid: f2cf69580c73bad4197be617d22c4232, type: 3}
+  m_TextureScaleList:
+  - 2.5
