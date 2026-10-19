@@ -71,7 +71,7 @@ public class fan : MonoBehaviour
     {
 
 
-        fanSound = RuntimeManager.CreateInstance(fanEventPath);
+        fanSound = FMODUnity.RuntimeManager.CreateInstance(fanEventPath);
         fanSound.setVolume(0f); // mute before initializing
 
         RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);

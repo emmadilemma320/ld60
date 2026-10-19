@@ -1,5 +1,3 @@
-using FMOD.Studio;
-using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -36,50 +34,15 @@ public class Player : MonoBehaviour
     private Animator anim;
     public SpriteRenderer flash;
 
-
-    [Header("Sound Stuff")]
-    string dashPath = "event:/Dash";
-    string jumpPath = "event:/Jump";
-    string hurtPath = "event:/Ouch";
-    string deathPath = "event:/Death";
-
-    //EventInstance jump;
-    //EventInstance dash;
-    //EventInstance hurt;
-    //EventInstance death;
-
-    EventReference jump;
-    EventReference dash;
-    EventReference hurt;
-    EventReference death;
-
-    bool jumpKeyPressed;
-
-
     void Start()
     {
         anim = GetComponent<Animator>();
-        loadFMODReferences();
     }
     void update_imunity_timer(){
         if (immunityTimerTimeLeft > 0){
             immunityTimerTimeLeft -= Time.fixedDeltaTime;
         }
         flash.color = new Color(1.0f, 0.0f, 0.0f, immunityTimerTimeLeft / 6.0f);
-    }
-
-    void loadFMODReferences()
-    {
-        //jump = RuntimeManager.CreateInstance(jumpPath);
-        //dash = RuntimeManager.CreateInstance(dashPath);
-        //hurt = RuntimeManager.CreateInstance(hurtPath);
-        //death = RuntimeManager.CreateInstance(deathPath);
-
-        jump = RuntimeManager.PathToEventReference(jumpPath); 
-        dash = RuntimeManager.PathToEventReference(dashPath);   
-        hurt = RuntimeManager.PathToEventReference(hurtPath);
-        death = RuntimeManager.PathToEventReference(deathPath);
-
     }
     void update_dash_timer(){
         if (dashTimeLeft > 0){
@@ -100,9 +63,6 @@ public class Player : MonoBehaviour
             dashTimeLeft = dashDuration;
             anim.SetTrigger("Dash");
             Debug.Log("Dash");
-
-            RuntimeManager.PlayOneShot(dash);
-
         }
     }
     void FixedUpdate()
@@ -125,28 +85,12 @@ public class Player : MonoBehaviour
             localScale.x = -1f;
             transform.localScale = localScale;
         }
-
-
-        // playing jump?
-        if (V == 1)
-        {
-            if (!jumpKeyPressed)
-            {
-                RuntimeManager.PlayOneShot(jump);
-                jumpKeyPressed = true;
-            }
-        } else
-        {
-            jumpKeyPressed = false;
-        }
-
-
-        if (dashTimeLeft > 0)
-        {
+        
+        
+        
+        if (dashTimeLeft > 0){
             p.vX = dashDirection * dashSpeed;
-        }
-        else
-        {
+        }else{
             p.vX = H * walkSpeed;
         }
         
@@ -161,16 +105,12 @@ public class Player : MonoBehaviour
             p.vY = jumpStrength;
             coyote = 5;
             jumpCounter = jumpLength;
-            
         }
         else if (V > 0)
         {
             if (jumpCounter > 0)
             {
                 p.vY = jumpStrength;
-
-              
-
             }
             p.gravity = -0.75f;
         }
@@ -196,9 +136,6 @@ public class Player : MonoBehaviour
                 health -=1;
                 Debug.Log("Take damage from sparks");
                 immunityTimerTimeLeft = immunityTimerDuration;
-
-                RuntimeManager.PlayOneShot(hurt);
-
             }
             else{
                 Debug.Log("Warning: Not taking damage since damge type unknown");
