@@ -1,9 +1,6 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
-using UnityEditor.Tilemaps;
- 
-
 
 public class fan : MonoBehaviour
 {
@@ -34,7 +31,7 @@ public class fan : MonoBehaviour
         if (!on){
             anim.enabled = false;
         }
-        timer = fan_time;
+        //timer = fan_time;
 
         InitializeFanSound();
 
