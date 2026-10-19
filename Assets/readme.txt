@@ -4,11 +4,10 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 
 emma to-do:
-    - add big red button
-    - add secondary area
-    - add win condition
     - game design
-    - checkpoints
+        - add big red button
+        - add secondary area
+        - add win condition
 
 
 
