@@ -1,6 +1,8 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
@@ -34,10 +36,46 @@ public class Player : MonoBehaviour
     private Animator anim;
     public SpriteRenderer flash;
 
+    [Header("Sound Stuff")]
+    string dashPath = "event:/Dash";
+    string jumpPath = "event:/Jump";
+    string hurtPath = "event:/Ouch";
+    string deathPath = "event:/Death";
+
+    EventInstance jump;
+    //EventInstance dash;
+    //EventInstance hurt;
+    //EventInstance death;
+
+    //EventReference jump;
+    EventReference dash;
+    EventReference hurt;
+    EventReference death;
+
+    bool jumpKeyPressed = false;
+
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        loadFMODReferences();
     }
+
+    void loadFMODReferences()
+    {
+        jump = RuntimeManager.CreateInstance(jumpPath);
+        //dash = RuntimeManager.CreateInstance(dashPath);
+        //hurt = RuntimeManager.CreateInstance(hurtPath);
+        //death = RuntimeManager.CreateInstance(deathPath);
+
+        //jump = RuntimeManager.PathToEventReference(jumpPath);
+        dash = RuntimeManager.PathToEventReference(dashPath);
+        hurt = RuntimeManager.PathToEventReference(hurtPath);
+        death = RuntimeManager.PathToEventReference(deathPath);
+
+    }
+
     void update_imunity_timer(){
         if (immunityTimerTimeLeft > 0){
             immunityTimerTimeLeft -= Time.fixedDeltaTime;
@@ -63,6 +101,9 @@ public class Player : MonoBehaviour
             dashTimeLeft = dashDuration;
             anim.SetTrigger("Dash");
             Debug.Log("Dash");
+
+            RuntimeManager.PlayOneShot(dash);
+            // play dash sound
         }
     }
     void FixedUpdate()
@@ -85,9 +126,10 @@ public class Player : MonoBehaviour
             localScale.x = -1f;
             transform.localScale = localScale;
         }
-        
-        
-        
+
+
+
+
         if (dashTimeLeft > 0){
             p.vX = dashDirection * dashSpeed;
         }else{
@@ -105,6 +147,41 @@ public class Player : MonoBehaviour
             p.vY = jumpStrength;
             coyote = 5;
             jumpCounter = jumpLength;
+            
+            // stop jump if its playing
+            PLAYBACK_STATE state;
+            jump.getPlaybackState(out state);
+            if (state != PLAYBACK_STATE.STOPPED)
+            {
+                jump.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+            
+            jump.getPlaybackState(out state);
+            { 
+            if (state == PLAYBACK_STATE.STOPPED)
+                {
+                    jump.start();
+                }
+            }
+            
+
+
+            // Play jump?
+            // no time to fix this. In a one block hole, holding jump will
+            // spam jump sfx. But issue is larger than a fix like this
+            //if (V >= 1)
+            //{
+            //    if (!jumpKeyPressed)
+            //    {
+            //        RuntimeManager.PlayOneShot(jump);
+            //        jumpKeyPressed = true;
+            //    }
+            //}
+            //else
+            //{
+            //    jumpKeyPressed = false;
+            //}
+
         }
         else if (V > 0)
         {
@@ -136,13 +213,20 @@ public class Player : MonoBehaviour
                 health -=1;
                 Debug.Log("Take damage from sparks");
                 immunityTimerTimeLeft = immunityTimerDuration;
+
+                RuntimeManager.PlayOneShot(hurt);
+
             }
-            else{
+            else
+            {
                 Debug.Log("Warning: Not taking damage since damge type unknown");
             }
         }
         if (health == 0)
         {
+
+            RuntimeManager.PlayOneShot(death);
+
             health = 3;
             p.pX = 0;
             p.pY = 0;
