@@ -7,7 +7,7 @@ public class fan : MonoBehaviour
     private bool button_controlled;
     
     // For the fan on/off
-    private const float FAN_SWITCH_TIME = 3f;
+    public float fan_time = 3f;
     private float timer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,7 +16,7 @@ public class fan : MonoBehaviour
         if (!on){
             anim.enabled = false;
         }
-        timer = FAN_SWITCH_TIME;
+        timer = fan_time;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class fan : MonoBehaviour
         timer -= Time.fixedDeltaTime;
         if (timer <= 0) {
             Flip();
-            timer = FAN_SWITCH_TIME;
+            timer = fan_time;
         }
     }
 

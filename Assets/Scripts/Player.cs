@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
 {
     public int max_health;
     public int health;
+    public SpriteRenderer[] healthBar;
+    public Sprite healthOn;
+    public Sprite healthOff;
     public bool imune_from_damage = false;
+
     float imunityTimerDuration = 5.5f;
     float imunityTimerTimeLeft = 0;
 
@@ -26,15 +31,19 @@ public class Player : MonoBehaviour
     readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
     readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
+
     private Animator anim;
+    public SpriteRenderer flash;
+
     void Start()
     {
         anim = GetComponent<Animator>();
     }
     void update_imunity_timer(){
-        if (imunityTimerTimeLeft > 0){
-            imunityTimerTimeLeft -= Time.deltaTime;
+        if (immunityTimerTimeLeft > 0){
+            immunityTimerTimeLeft -= Time.fixedDeltaTime;
         }
+        flash.color = new Color(1.0f, 0.0f, 0.0f, immunityTimerTimeLeft / 6.0f);
     }
     void update_dash_timer(){
         if (dashTimeLeft > 0){
@@ -115,20 +124,28 @@ public class Player : MonoBehaviour
         {
             p.vY += 2f;
         }
+        healthBar[0].sprite = health > 0 ? healthOn : healthOff;
+        healthBar[1].sprite = health > 1 ? healthOn : healthOff;
+        healthBar[2].sprite = health > 2 ? healthOn : healthOff;
         p.Simulate();
         camera.Simulate();
     }
 
     public void take_damage(string damage_type){
-        if (imunityTimerTimeLeft <= 0){
+        if (immunityTimerTimeLeft <= 0){
             if (damage_type == "sparks"){
                 health -=1;
                 Debug.Log("Take damage from sparks");
-                imunityTimerTimeLeft = imunityTimerDuration;
+                immunityTimerTimeLeft = immunityTimerDuration;
             }
             else{
                 Debug.Log("Warning: Not taking damage since damge type unknown");
             }
         }
+    }
+
+    public void Win() // Call this when a win condition is met!
+    {
+        SceneManager.LoadScene("Win");
     }
 }

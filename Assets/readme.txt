@@ -5,7 +5,7 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - update button sprite on button push
-    - doors
+    - add timer to sparks
 
 
 done:
@@ -25,3 +25,8 @@ done:
     - update button sprite 
     - fan blows player up (ty kent)
     - button turn on/off fan
+    - piston movement (initial)
+    - fix upside piston movement
+    - piston button connection
+    - link sparks to buttons
+    - add background
