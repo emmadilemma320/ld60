@@ -5,7 +5,12 @@ Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4sz
 
 emma to-do:
     - update button sprite on button push
-    - add timer to sparks
+    - add big red button
+    - add secondary area
+    - add win condition
+    - game design
+    - checkpoints
+
 
 
 done:
@@ -30,3 +35,4 @@ done:
     - piston button connection
     - link sparks to buttons
     - add background
+    - add timer to sparks
