@@ -1,6 +1,9 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEditor.Tilemaps;
+ 
+
 
 public class fan : MonoBehaviour
 {
@@ -10,9 +13,12 @@ public class fan : MonoBehaviour
     
     // For the fan on/off
     public float fan_time = 3f;
-    private float timer;
+    public float timer;
 
-    [Header("FMOD stuff ugh:")]
+    // Particles
+    [SerializeField] ParticleSystem particles;    
+
+   [Header("FMOD stuff ugh:")]
     private EventInstance fanSound;
     private string fanEventPath = "event:/Fan";
     [SerializeField] float fanMaxVolume = 1f;
@@ -32,7 +38,11 @@ public class fan : MonoBehaviour
 
         InitializeFanSound();
 
+        particles.Play();
+
         //camera = FindAnyObjectByType<Camera>();
+        UpdateParticles();
+
     }
 
     // Update is called once per frame
@@ -40,6 +50,7 @@ public class fan : MonoBehaviour
         if (button_controlled) return;
         timer -= Time.fixedDeltaTime;
         if (timer <= 0) {
+            Debug.Log("Timer Triggered");
             Flip();
             timer = fan_time;
         }
@@ -57,23 +68,41 @@ public class fan : MonoBehaviour
         {
             fanSound.setVolume(1f);
             //Debug.Log("Unmuting Fan!");
+
+            //particles.Play();
+
         }
-        else if (!on)
+        else
         {
             fanSound.setVolume(0f); // MUTE
             //Debug.Log("Muting Fan!");
 
+            //particles.Stop();
+
         }
 
+        UpdateParticles();
     }
+
+    void UpdateParticles()
+    {
+        if (on)
+        {
+            particles.Play();
+        }
+        else if (!on)
+        {
+            particles.Stop();
+        }
+    }
+
 
     void InitializeFanSound()
     {
 
-
         fanSound = RuntimeManager.CreateInstance(fanEventPath);
 
-        fanSound.setVolume(0f); 
+        fanSound.setVolume(0f);
 
         RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);
 
@@ -81,7 +110,7 @@ public class fan : MonoBehaviour
 
         Debug.Log(fanSound);
 
-        fanSound.start(); 
+        fanSound.start();
 
     }
 
