@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     private Animator anim;
     public SpriteRenderer flash;
 
+    public float spawnX;
+    public float spawnY;
+
     [Header("Sound Stuff")]
     string dashPath = "event:/Dash";
     string jumpPath = "event:/Jump";
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         loadFMODReferences();
+        spawnX = p.pX;
+        spawnY = p.pY;
     }
 
     void loadFMODReferences()
@@ -216,13 +221,22 @@ public class Player : MonoBehaviour
             RuntimeManager.PlayOneShot(death);
 
             health = 3;
-            p.pX = 0;
-            p.pY = 0;
+            p.pX = spawnX;
+            p.pY = spawnY;
         }
     }
 
     public void Win() // Call this when a win condition is met!
     {
         SceneManager.LoadScene("Win");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            spawnX = p.pX;
+            spawnY = p.pY;
+        }
     }
 }
