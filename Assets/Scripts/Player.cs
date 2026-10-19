@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     }
     void update_dash_timer(){
         if (dashTimeLeft > 0){
-            dashTimeLeft -= Time.deltaTime;
+            dashTimeLeft -= Time.fixedDeltaTime;
             transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
             if (dashTimeLeft <= 0.0001){// end dash
                 anim.SetTrigger("DashEnd");
