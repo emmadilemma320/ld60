@@ -107,7 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a14f91941965f74687106a51e259f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  linked_fans: []
+  linked_items: []
+  ButtonUp: {fileID: 3450782470697667677, guid: f5b0c061e776bb847aed3697a8067992, type: 3}
+  ButtonDown: {fileID: -1636237286, guid: f5b0c061e776bb847aed3697a8067992, type: 3}
 --- !u!61 &2378449662341400966
 BoxCollider2D:
   m_ObjectHideFlags: 0

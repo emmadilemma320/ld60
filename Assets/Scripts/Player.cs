@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
-using FMODUnity;
 
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
@@ -157,7 +156,6 @@ public class Player : MonoBehaviour
                 jump.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
             
-            
             jump.getPlaybackState(out state);
             { 
             if (state == PLAYBACK_STATE.STOPPED)
@@ -166,8 +164,6 @@ public class Player : MonoBehaviour
                 }
             }
             
-
-
 
 
             // Play jump?

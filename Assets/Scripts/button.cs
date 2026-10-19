@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
+using FMOD.Studio;
 
 public class button : MonoBehaviour
 {
@@ -10,12 +12,27 @@ public class button : MonoBehaviour
     private List<piston> linked_pistons;
     private List<sparks> linked_sparks;
     UnityEvent button_push;
-    
+
+    [SerializeField] Sprite ButtonUp;
+    [SerializeField] Sprite ButtonDown;
+    SpriteRenderer spriteRenderer;
+
+
+    [Header("Audio Stuff")]
+    EventReference switchOn;
+    EventReference switchOff;
+    bool pressed = false;
+
+    string switchOnPath = "event:/Button Down";
+    string switchOffPath = "event:/Button Up";
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         linked_fans = new List<fan>();
         linked_pistons = new List<piston>();
         linked_sparks = new List<sparks>();
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         foreach(Transform item in this.linked_items){
             if(item.gameObject.TryGetComponent<fan>(out fan f)) {
@@ -32,6 +49,10 @@ public class button : MonoBehaviour
                 s.Link();
             }
         }
+
+        switchOn = RuntimeManager.PathToEventReference(switchOnPath);
+        switchOff = RuntimeManager.PathToEventReference(switchOffPath);
+
     }
 
     // Update is called once per frame
@@ -43,10 +64,26 @@ public class button : MonoBehaviour
         // when the button is pushed, it will send out a signal to all linked fans that they 
         if (other.gameObject.CompareTag("Player")){
             //print("player entered area");
-            foreach(fan f in this.linked_fans) {
-                //print("flipped fan"+f);
-                f.Flip();
+
+            pressed = !pressed;
+
+            if (pressed)
+            {
+                RuntimeManager.PlayOneShot(switchOn);
+                spriteRenderer.sprite = ButtonDown;
             }
+            else
+            {
+                RuntimeManager.PlayOneShot(switchOff);
+                spriteRenderer.sprite = ButtonUp;
+
+            }
+
+            foreach (fan f in this.linked_fans)
+                {
+                    //print("flipped fan"+f);
+                    f.Flip();
+                }
             foreach(piston p in this.linked_pistons) {
                 //print("turned on piston "+p);
                 p.move();
