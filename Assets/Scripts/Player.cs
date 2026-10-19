@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
@@ -92,6 +92,6 @@ public class Player : MonoBehaviour
 
     public void Win() // Call this when a win condition is met!
     {
-        
+        SceneManager.LoadScene("Win");
     }
 }
