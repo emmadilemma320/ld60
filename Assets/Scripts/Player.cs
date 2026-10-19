@@ -238,6 +238,7 @@ public class Player : MonoBehaviour
         {
             spawnX = p.pX;
             spawnY = p.pY;
+            collision.gameObject.GetComponent<check>().turnon();
         }
     }
 }
