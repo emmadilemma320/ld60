@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     public Sprite healthOff;
     public bool imune_from_damage = false;
 
-    float imunityTimerDuration = 5.5f;
-    float imunityTimerTimeLeft = 0;
+    float immunityTimerDuration = 5.5f;
+    float immunityTimerTimeLeft = 0;
 
     public float dashSpeed = 50;
     public float dashDuration = 0.75f;
