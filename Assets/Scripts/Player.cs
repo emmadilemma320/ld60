@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public Sprite healthOn;
     public Sprite healthOff;
     public bool imune_from_damage = false;
-    float immunityTimerDuration = 5.5f;
+    float immunityTimerDuration = 0.5f;
     float immunityTimerTimeLeft = 0;
 
     public float dashSpeed = 50;
