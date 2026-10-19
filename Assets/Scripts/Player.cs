@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
     public bool fan;
     private int coyote = 0;
     private int jumpCounter;
-    readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
-    readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
+    //readonly InputAction horizontal = InputSystem.actions.FindAction("Horizontal");
+    //readonly InputAction vertical = InputSystem.actions.FindAction("Vertical");
     public PhysicsObject p;
 
     private Animator anim;
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         flash.color = new Color(1.0f, 0.0f, 0.0f, immunityTimerTimeLeft / 6.0f);
     }
     void update_dash_timer(){
-        if (dashTimeLeft > 0){
+        if (dashTimeLeft >= 0){
             dashTimeLeft -= Time.fixedDeltaTime;
             transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
             if (dashTimeLeft <= 0.0001){// end dash
@@ -93,31 +93,17 @@ public class Player : MonoBehaviour
             }
         }
     }
-    public void Dash(InputAction.CallbackContext context){
-        // If dash action and not already in dash
-        if (context.performed && dashTimeLeft <=0){
-            dashDirection = transform.localScale.x;
-     
-            dashTimeLeft = dashDuration;
-            anim.SetTrigger("Dash");
-            Debug.Log("Dash");
-
-            RuntimeManager.PlayOneShot(dash);
-            // play dash sound
-        }
-    }
     void FixedUpdate()
     {
         update_imunity_timer();
         update_dash_timer();
-        float H = horizontal.ReadValue<float>();
-        float V = vertical.ReadValue<float>();
+        float H = Input.GetAxisRaw("Horizontal");
+        float V = Input.GetAxisRaw("Vertical");
         
         anim.SetFloat("DashTimeLeft", dashTimeLeft);
         anim.SetFloat("yVelocity", p.vY);
         anim.SetFloat("Magnitude", Mathf.Abs(p.vX));
         
-
         Vector3 localScale = transform.localScale;
         if (p.vX >= 0.1  && localScale.x == -1f){ // Flip to right
             localScale.x = 1f;
@@ -126,9 +112,6 @@ public class Player : MonoBehaviour
             localScale.x = -1f;
             transform.localScale = localScale;
         }
-
-
-
 
         if (dashTimeLeft > 0){
             p.vX = dashDirection * dashSpeed;
@@ -163,8 +146,6 @@ public class Player : MonoBehaviour
                     jump.start();
                 }
             }
-            
-
 
             // Play jump?
             // no time to fix this. In a one block hole, holding jump will
@@ -199,6 +180,16 @@ public class Player : MonoBehaviour
         if (fan)
         {
             p.vY += 2f;
+        }
+        if (Input.GetKey(KeyCode.Q) && dashTimeLeft <= 0)
+        {
+            dashDirection = transform.localScale.x;
+    
+            dashTimeLeft = dashDuration;
+            anim.SetTrigger("Dash");
+            Debug.Log("Dash");
+
+            RuntimeManager.PlayOneShot(dash);
         }
         healthBar[0].sprite = health > 0 ? healthOn : healthOff;
         healthBar[1].sprite = health > 1 ? healthOn : healthOff;
