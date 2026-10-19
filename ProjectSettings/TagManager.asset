@@ -41,11 +41,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: background
     uniqueID: 853864091
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: piston
     uniqueID: 3343325195
