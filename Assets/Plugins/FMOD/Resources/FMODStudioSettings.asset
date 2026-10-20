@@ -143,16 +143,16 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - b7716510a1f36934c87976f3a81dbf3d
-  - 46fbfdf3fc43db0458918377fd40293e
-  - 52eb9df5db46521439908db3a29a1bbb
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - 46fbfdf3fc43db0458918377fd40293e
   - 0f8eb3f400726694eb47beb1a9f94ce8
-  - c88d16e5272a4e241b0ef0ac2e53b73d
   - fd7c55dab0fce234b8c25f6ffca523c1
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - de700ef3f37a49b58a57ae3addf01ad9
   - e7a046c753c3c3d4aacc91f6597f310d
+  - 52eb9df5db46521439908db3a29a1bbb
+  - 2c5177b11d81d824dbb064f9ac8527da
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - b7716510a1f36934c87976f3a81dbf3d
+  - de700ef3f37a49b58a57ae3addf01ad9
   codecChannels:
     Value: []
     HasValue: 0
@@ -486,8 +486,11 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -500,21 +503,21 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131861
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131861
   Platforms:
-  - {fileID: 6143131055131056879}
-  - {fileID: -5896427437253509974}
-  - {fileID: 310406661460330551}
   - {fileID: -6739623035051084830}
-  - {fileID: -5819491374474432019}
-  - {fileID: 5678858142418683999}
-  - {fileID: -5769382419792443374}
-  - {fileID: 3446004620171803025}
-  - {fileID: 8825224583729677259}
-  - {fileID: -3314495122988458463}
   - {fileID: -6084777821929264246}
+  - {fileID: -5896427437253509974}
+  - {fileID: -5819491374474432019}
+  - {fileID: -5769382419792443374}
+  - {fileID: -3314495122988458463}
+  - {fileID: 310406661460330551}
   - {fileID: 538193191814971473}
+  - {fileID: 3446004620171803025}
+  - {fileID: 5678858142418683999}
+  - {fileID: 6143131055131056879}
+  - {fileID: 8825224583729677259}
   MigratedPlatforms: 0a00000015000000090000000c0000000b00000006000000050000000800000000000000120000000200000001000000i
 --- !u!114 &310406661460330551
 MonoBehaviour:
