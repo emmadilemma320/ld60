@@ -181,6 +181,14 @@ public class Player : MonoBehaviour
 
             RuntimeManager.PlayOneShot(dash);
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            RuntimeManager.PlayOneShot(death);
+
+            health = 3;
+            p.pX = spawnX;
+            p.pY = spawnY;
+        }
         healthBar[0].sprite = health > 0 ? healthOn : healthOff;
         healthBar[1].sprite = health > 1 ? healthOn : healthOff;
         healthBar[2].sprite = health > 2 ? healthOn : healthOff;
