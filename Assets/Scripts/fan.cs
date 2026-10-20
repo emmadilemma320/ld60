@@ -111,8 +111,8 @@ public class fan : MonoBehaviour
 
     IEnumerator InitializeFanSound()
     {
-        bool loaded;
-        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
+
+        yield return new WaitUntil(() => RuntimeManager.HaveAllBanksLoaded);
 
         fanSound = RuntimeManager.CreateInstance(fanEventPath);
 
@@ -121,8 +121,6 @@ public class fan : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);
 
         Debug.Log(transform.position);
-
-        Debug.Log(fanSound);
 
         fanSound.start();
 
