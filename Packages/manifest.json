@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.fmod.fmod-for-unity.v204": "file:C:/Users/julian/Downloads/fmodstudio20400 (1).tgz",
     "com.unity.2d.animation": "16.0.1",
     "com.unity.2d.aseprite": "6.0.0",
     "com.unity.2d.psdimporter": "15.0.1",
