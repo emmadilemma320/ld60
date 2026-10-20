@@ -1,6 +1,8 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using System.Collections.Generic;
+    using System.Collections;
 
 public class fan : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class fan : MonoBehaviour
         }
         //timer = fan_time;
 
-        InitializeFanSound();
+        StartCoroutine(InitializeFanSound());
 
         particles.Play();
 
@@ -63,18 +65,31 @@ public class fan : MonoBehaviour
 
         if (on)
         {
-            fanSound.setVolume(1f);
-            //Debug.Log("Unmuting Fan!");
 
-            //particles.Play();
+            PLAYBACK_STATE state;
+            fanSound.getPlaybackState(out state);
+
+            if (state != PLAYBACK_STATE.PLAYING)
+            {
+                fanSound.start();
+            }
+
+            //fanSound.setVolume(1f);
+            //Debug.Log("Unmuting Fan!");
 
         }
         else
         {
-            fanSound.setVolume(0f); // MUTE
-            //Debug.Log("Muting Fan!");
+            PLAYBACK_STATE state;
+            fanSound.getPlaybackState(out state);
 
-            //particles.Stop();
+            if (state != PLAYBACK_STATE.STOPPED)
+            {
+                fanSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            }
+            
+            //fanSound.setVolume(0f); // MUTE
+            //Debug.Log("Muting Fan!");
 
         }
 
@@ -94,12 +109,13 @@ public class fan : MonoBehaviour
     }
 
 
-    void InitializeFanSound()
+    IEnumerator InitializeFanSound()
     {
+        yield return new WaitForSeconds(1);
 
         fanSound = RuntimeManager.CreateInstance(fanEventPath);
 
-        fanSound.setVolume(0f);
+        fanSound.setVolume(1f);
 
         RuntimeManager.AttachInstanceToGameObject(fanSound, gameObject);
 

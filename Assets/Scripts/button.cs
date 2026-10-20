@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
@@ -55,9 +56,16 @@ public class button : MonoBehaviour
             }
         }
 
+
+        StartCoroutine(DelayedAudioLoad());
+
+    }
+
+    IEnumerator DelayedAudioLoad()
+    {
+        yield return new WaitForSeconds(1);
         switchOn = RuntimeManager.PathToEventReference(switchOnPath);
         switchOff = RuntimeManager.PathToEventReference(switchOffPath);
-
     }
 
     // Update is called once per frame

@@ -2,6 +2,8 @@ using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using System.Collections;
+
 
 [RequireComponent(typeof(PhysicsObject))]
 public class Player : MonoBehaviour
@@ -59,13 +61,14 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        loadFMODReferences();
+        StartCoroutine(loadFMODReferences());
         spawnX = p.pX;
         spawnY = p.pY;
     }
 
-    void loadFMODReferences()
+    IEnumerator loadFMODReferences()
     {
+        yield return new WaitForSeconds(1);
         jump = RuntimeManager.CreateInstance(jumpPath);
         //dash = RuntimeManager.CreateInstance(dashPath);
         //hurt = RuntimeManager.CreateInstance(hurtPath);
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
         dash = RuntimeManager.PathToEventReference(dashPath);
         hurt = RuntimeManager.PathToEventReference(hurtPath);
         death = RuntimeManager.PathToEventReference(deathPath);
+
 
     }
 
@@ -148,22 +152,6 @@ public class Player : MonoBehaviour
                     jump.start();
                 }
             }
-
-            // Play jump?
-            // no time to fix this. In a one block hole, holding jump will
-            // spam jump sfx. But issue is larger than a fix like this
-            //if (V >= 1)
-            //{
-            //    if (!jumpKeyPressed)
-            //    {
-            //        RuntimeManager.PlayOneShot(jump);
-            //        jumpKeyPressed = true;
-            //    }
-            //}
-            //else
-            //{
-            //    jumpKeyPressed = false;
-            //}
 
         }
         else if (V > 0)
