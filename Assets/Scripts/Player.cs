@@ -68,7 +68,9 @@ public class Player : MonoBehaviour
 
     IEnumerator loadFMODReferences()
     {
-        yield return new WaitForSeconds(1);
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
+        
         jump = RuntimeManager.CreateInstance(jumpPath);
         //dash = RuntimeManager.CreateInstance(dashPath);
         //hurt = RuntimeManager.CreateInstance(hurtPath);

@@ -19,7 +19,7 @@ public class sparks : MonoBehaviour
     string buzzpath = "event:/BuzzLoop";
     EventInstance buzz;
     public bool withinRange;
-    [SerializeField] float audioRange = 20f;
+    [SerializeField] float audioRange = 16f;
     // audio instances outside of range will be disabled, and enabled when within range.
     // Must be larger than the attenuation distance on FMOD Studio
 
@@ -45,8 +45,9 @@ public class sparks : MonoBehaviour
     IEnumerator DelayedAudioLoadIn()
         // it was playing audio before it kinda realized where things were.
         // so Just a little delay
-    {        
-        yield return new WaitForSeconds(1);
+    {
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
 
         buzz = RuntimeManager.CreateInstance(buzzpath);
 

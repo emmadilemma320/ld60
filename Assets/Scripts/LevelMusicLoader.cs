@@ -19,7 +19,8 @@ public class LevelMusicLoader : MonoBehaviour
 
     IEnumerator DelayedAudioLoad()
     {
-        yield return new WaitForSeconds(1);
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
 
         music = RuntimeManager.CreateInstance(musicPath);
 

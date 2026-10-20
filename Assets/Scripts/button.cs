@@ -63,7 +63,9 @@ public class button : MonoBehaviour
 
     IEnumerator DelayedAudioLoad()
     {
-        yield return new WaitForSeconds(1);
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
+
         switchOn = RuntimeManager.PathToEventReference(switchOnPath);
         switchOff = RuntimeManager.PathToEventReference(switchOffPath);
     }
