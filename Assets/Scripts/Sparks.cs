@@ -19,7 +19,7 @@ public class sparks : MonoBehaviour
     string buzzpath = "event:/BuzzLoop";
     EventInstance buzz;
     public bool withinRange;
-    [SerializeField] float audioRange = 16f;
+    float audioRange = 16f;
     // audio instances outside of range will be disabled, and enabled when within range.
     // Must be larger than the attenuation distance on FMOD Studio
 
