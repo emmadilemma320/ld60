@@ -2,12 +2,11 @@ THEME: OLD TECH
 
 Design Doc: https://docs.google.com/document/d/1CNTr4www0_wEoLcrbZV5NYowFTrmt4szc_PByVHaFmk/edit?tab=t.0
 
+level ideas:
+    - vertical level where you are dodging sparks while falling
 
 emma to-do:
-    - game design
-        - add big red button
-        - add secondary area
-        - add win condition
+    - improve checkpoint sprite code
 
 
 
@@ -35,3 +34,7 @@ done:
     - add background
     - add timer to sparks
     - update button sprite on button push (ty julian)
+    - game design
+        - add big red button
+        - add secondary area
+        - add win condition
