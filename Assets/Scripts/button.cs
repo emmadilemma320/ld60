@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,16 +18,22 @@ public class button : MonoBehaviour
     [SerializeField] Sprite ButtonUp;
     [SerializeField] Sprite ButtonDown;
     SpriteRenderer spriteRenderer;
+    bool is_big_red_button = false;
 
 
     [Header("Audio Stuff")]
     EventReference switchOn;
     EventReference switchOff;
     bool pressed = false;
-    bool is_big_red_button = false;
 
     string switchOnPath = "event:/Button Down";
     string switchOffPath = "event:/Button Up";
+
+    public bool withinRange;
+    float audioRange = 16f;
+    // audio instances outside of range will be disabled, and enabled when within range.
+    // Must be larger than the attenuation distance on FMOD Studio
+    Camera camera;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -55,14 +62,40 @@ public class button : MonoBehaviour
             }
         }
 
-        switchOn = RuntimeManager.PathToEventReference(switchOnPath);
-        switchOff = RuntimeManager.PathToEventReference(switchOffPath);
+        camera = FindAnyObjectByType<Camera>();
+
+        StartCoroutine(DelayedAudioLoad());
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate(){
-        
+    IEnumerator DelayedAudioLoad()
+    {
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
+
+        switchOn = RuntimeManager.PathToEventReference(switchOnPath);
+        switchOff = RuntimeManager.PathToEventReference(switchOffPath);
+    }
+    void CheckAudioDistance()
+    {
+        // duplicate code from sparks. Should probably make it one method eventually? Idk!
+
+        float distance = Vector2.Distance(transform.position, camera.transform.position);
+        if (distance < audioRange)
+        // if inside range
+        {
+            withinRange = true;
+        }
+        else
+        {
+            withinRange = false;
+        }
+    }
+
+
+    void FixedUpdate()
+    {
+        CheckAudioDistance();
     }
 
     void OnCollisionEnter2D(Collision2D other){

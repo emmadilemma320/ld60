@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.IO;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -17,7 +18,12 @@ public class sparks : MonoBehaviour
     [Header("SOUND")]
     string buzzpath = "event:/BuzzLoop";
     EventInstance buzz;
+    public bool withinRange;
+    float audioRange = 16f;
+    // audio instances outside of range will be disabled, and enabled when within range.
+    // Must be larger than the attenuation distance on FMOD Studio
 
+    Camera camera;
 
     void Start() {
         //print(name+" starting");
@@ -30,6 +36,8 @@ public class sparks : MonoBehaviour
             sprite.enabled = false;
         }
 
+        camera = FindAnyObjectByType<Camera>();
+
         StartCoroutine(DelayedAudioLoadIn());
 
     }
@@ -37,8 +45,9 @@ public class sparks : MonoBehaviour
     IEnumerator DelayedAudioLoadIn()
         // it was playing audio before it kinda realized where things were.
         // so Just a little delay
-    {        
-        yield return new WaitForSeconds(1);
+    {
+        bool loaded;
+        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
 
         buzz = RuntimeManager.CreateInstance(buzzpath);
 
@@ -47,10 +56,29 @@ public class sparks : MonoBehaviour
         buzz.start();
     }
 
+    void CheckAudioDistance()
+    {
+
+        float distance = Vector2.Distance(transform.position, camera.transform.position);
+        if (distance < audioRange)
+        // if inside range
+        {
+            withinRange = true;
+        }
+        else
+        {
+            withinRange= false;
+        }
+
+
+    }
+
     void FixedUpdate() {
 
+        CheckAudioDistance();
+
         ToggleBuzzSfx();
-        
+
         if (!on_timer) return;
         timer -= Time.fixedDeltaTime;
         if (timer <= 0) {
@@ -89,7 +117,7 @@ public class sparks : MonoBehaviour
     void ToggleBuzzSfx()
     {
         //Turning buzz on and off
-        if (on)
+        if (on && withinRange)
         {
             //buzz.setVolume(1f);
             Debug.Log("off");
@@ -104,7 +132,7 @@ public class sparks : MonoBehaviour
                 Debug.Log("PLAING");
             }
         }
-        else if (!on)
+        else
         {
             //buzz.setVolume(0f);
             Debug.Log("on");
