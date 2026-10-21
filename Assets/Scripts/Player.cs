@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     bool jumpKeyPressed = false;
 
-
+    bool delayedR;
 
     void Start()
     {
@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
 
             RuntimeManager.PlayOneShot(dash);
         }
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && !delayedR)
         {
             RuntimeManager.PlayOneShot(death);
 
@@ -191,6 +191,7 @@ public class Player : MonoBehaviour
             p.pX = spawnX;
             p.pY = spawnY;
         }
+        delayedR = Input.GetKey(KeyCode.R);
         healthBar[0].sprite = health > 0 ? healthOn : healthOff;
         healthBar[1].sprite = health > 1 ? healthOn : healthOff;
         healthBar[2].sprite = health > 2 ? healthOn : healthOff;
