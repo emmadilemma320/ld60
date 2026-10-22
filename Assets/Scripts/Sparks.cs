@@ -22,6 +22,8 @@ public class sparks : MonoBehaviour
     float audioRange = 16f;
     // audio instances outside of range will be disabled, and enabled when within range.
     // Must be larger than the attenuation distance on FMOD Studio
+    bool audioLoaded = false;
+    //float distance;
 
     Camera camera;
 
@@ -38,23 +40,23 @@ public class sparks : MonoBehaviour
 
         camera = FindAnyObjectByType<Camera>();
 
-        StartCoroutine(DelayedAudioLoadIn());
+        //StartCoroutine(DelayedAudioLoadIn());
 
     }
 
-    IEnumerator DelayedAudioLoadIn()
-        // it was playing audio before it kinda realized where things were.
-        // so Just a little delay
-    {
-        bool loaded;
-        yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
+    //IEnumerator DelayedAudioLoadIn()
+    //    // it was playing audio before it kinda realized where things were.
+    //    // so Just a little delay
+    //{
+    //    bool loaded;
+    //    yield return new WaitUntil(() => loaded = RuntimeManager.HaveAllBanksLoaded);
 
-        buzz = RuntimeManager.CreateInstance(buzzpath);
+    //    buzz = RuntimeManager.CreateInstance(buzzpath);
 
-        RuntimeManager.AttachInstanceToGameObject(buzz, gameObject);
+    //    RuntimeManager.AttachInstanceToGameObject(buzz, gameObject);
 
-        buzz.start();
-    }
+    //    buzz.start();
+    //}
 
     void CheckAudioDistance()
     {
@@ -70,14 +72,38 @@ public class sparks : MonoBehaviour
             withinRange= false;
         }
 
+    }
+
+    void LoadAudio()
+        // only loads when in range (to put less stress on command buffer)
+    {
+        if (withinRange && RuntimeManager.HaveAllBanksLoaded)
+        {
+            buzz = RuntimeManager.CreateInstance(buzzpath);
+
+            RuntimeManager.AttachInstanceToGameObject(buzz, gameObject);
+
+            buzz.start();
+
+            audioLoaded = true;
+
+
+        }
 
     }
+
+
 
     void FixedUpdate() {
 
         CheckAudioDistance();
 
-        ToggleBuzzSfx();
+        if (!audioLoaded)
+        {
+            LoadAudio();
+        }
+
+        ManageBuzzSfx();
 
         if (!on_timer) return;
         timer -= Time.fixedDeltaTime;
@@ -114,13 +140,13 @@ public class sparks : MonoBehaviour
         // switch states you can call it here instead
     }
 
-    void ToggleBuzzSfx()
+    void ManageBuzzSfx()
     {
         //Turning buzz on and off
         if (on && withinRange)
         {
             //buzz.setVolume(1f);
-            Debug.Log("off");
+            //Debug.Log("off");
 
             PLAYBACK_STATE state;
             buzz.getPlaybackState(out state);
@@ -129,13 +155,13 @@ public class sparks : MonoBehaviour
             {
                 buzz.start();
                 // turn on
-                Debug.Log("PLAING");
+                //Debug.Log("PLAING");
             }
         }
         else
         {
             //buzz.setVolume(0f);
-            Debug.Log("on");
+            //Debug.Log("on");
             PLAYBACK_STATE state;
             buzz.getPlaybackState(out state);
             if (state == PLAYBACK_STATE.PLAYING)
@@ -143,7 +169,7 @@ public class sparks : MonoBehaviour
             {
                 buzz.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 // turn off
-                Debug.Log("tuRNING OFF");
+                //Debug.Log("tuRNING OFF");
 
             }
         }
