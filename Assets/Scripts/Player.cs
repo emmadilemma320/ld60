@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
 
     bool jumpKeyPressed = false;
 
-    bool delayedR;
-
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -90,17 +88,32 @@ public class Player : MonoBehaviour
         }
         flash.color = new Color(1.0f, 0.0f, 0.0f, immunityTimerTimeLeft / 6.0f);
     }
+
     void update_dash_timer(){
-        if (dashTimeLeft >= 0){
+        if (dashTimeLeft > 0){
             dashTimeLeft -= Time.fixedDeltaTime;
             transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
-            if (dashTimeLeft <= 0.0001){// end dash
-                anim.SetTrigger("DashEnd");
-                p.vX = dashDirection * walkSpeed;
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (dashTimeLeft <= 0.0001){
+                end_dash();
             }
         }
     }
+
+    void start_dash(){
+        dashDirection = transform.localScale.x; // This is the direction the player is facing
+        dashTimeLeft = dashDuration;
+        anim.SetTrigger("Dash");
+        Debug.Log("Dash");
+
+        RuntimeManager.PlayOneShot(dash);
+    }
+
+    void end_dash(){
+        dashTimeLeft = 0;
+        p.vX = dashDirection * walkSpeed;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
     void FixedUpdate()
     {
         update_imunity_timer();
@@ -173,32 +186,34 @@ public class Player : MonoBehaviour
         {
             p.vY += 2f;
         }
-        if (Input.GetKey(KeyCode.Q) && dashTimeLeft <= 0)
+        if (Input.GetKeyDown(KeyCode.Q) && dashTimeLeft <= 0)
         {
-            dashDirection = transform.localScale.x;
-    
-            dashTimeLeft = dashDuration;
-            anim.SetTrigger("Dash");
-            Debug.Log("Dash");
-
-            RuntimeManager.PlayOneShot(dash);
+            start_dash();
         }
-        if (Input.GetKey(KeyCode.R) && !delayedR)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            RuntimeManager.PlayOneShot(death);
-
-            health = 3;
-            p.pX = spawnX;
-            p.pY = spawnY;
+            die();
         }
-        delayedR = Input.GetKey(KeyCode.R);
-        healthBar[0].sprite = health > 0 ? healthOn : healthOff;
-        healthBar[1].sprite = health > 1 ? healthOn : healthOff;
-        healthBar[2].sprite = health > 2 ? healthOn : healthOff;
+        update_health_bar();
         p.Simulate();
         camera.Simulate();
     }
 
+    public void update_health_bar(){
+        healthBar[0].sprite = health > 0 ? healthOn : healthOff;
+        healthBar[1].sprite = health > 1 ? healthOn : healthOff;
+        healthBar[2].sprite = health > 2 ? healthOn : healthOff;
+    }
+    public void die(){
+        RuntimeManager.PlayOneShot(death);
+        health = 3;
+        p.pX = spawnX;
+        p.pY = spawnY;
+        end_dash();
+        p.vX = 0;
+        p.vY = 0;
+        update_health_bar();
+    }
     public void take_damage(string damage_type){
         if (immunityTimerTimeLeft <= 0){
             if (damage_type == "sparks"){
@@ -214,14 +229,9 @@ public class Player : MonoBehaviour
                 Debug.Log("Warning: Not taking damage since damge type unknown");
             }
         }
-        if (health == 0)
+        if (health <= 0)
         {
-
-            RuntimeManager.PlayOneShot(death);
-
-            health = 3;
-            p.pX = spawnX;
-            p.pY = spawnY;
+            die();
         }
     }
 
