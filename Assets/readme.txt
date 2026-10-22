@@ -39,7 +39,7 @@ To Do:
 - Slopes -Kent
 
 - portals! (toggleable)
-
+- Decrease flash intensity: 
 
 
 - Time delay buttons
