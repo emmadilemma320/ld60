@@ -22,8 +22,8 @@ public class fan : MonoBehaviour
     private EventInstance fanSound;
     private string fanEventPath = "event:/Fan";
     [SerializeField] float fanMaxVolume = 1f;
-    bool withinRange;
-    float audioRange = 16f;
+    public bool withinRange;
+    float audioRange = 3f;
     // audio instances outside of range will be disabled, and enabled when within range.
     // Must be larger than the attenuation distance on FMOD Studio
     bool audioLoaded = false;
@@ -173,7 +173,7 @@ public class fan : MonoBehaviour
 
             audioLoaded = true;
 
-
+            Debug.Log("Fan Loaded. Audio range is :" + Vector2.Distance(transform.position, camera.transform.position));
         }
     }
 

@@ -87,6 +87,8 @@ public class sparks : MonoBehaviour
 
             audioLoaded = true;
 
+            
+            //Debug.Log("Spark Loaded. Audio range is :" + Vector2.Distance(transform.position, camera.transform.position));
 
         }
 
