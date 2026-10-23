@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     }
 
     void start_dash(){
-        dashDirection = transform.localScale.x; // This is the direction the player is facing
+        dashDirection = transform.localScale.x; // This is not the direction the player is facing
         dashTimeLeft = dashDuration;
         anim.SetTrigger("Dash");
         Debug.Log("Dash");
