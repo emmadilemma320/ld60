@@ -148,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flash lightning_0
+      name: flash_lightning_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,16 +161,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c26c58d5851cfe220800000000000000
-      internalID: 2517443301993727532
+      spriteID: df45c88d025f4474c97291dd9ffa2564
+      internalID: -559244132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_1
+      name: flash_lightning_1
       rect:
         serializedVersion: 2
         x: 16
@@ -183,16 +183,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: be6af3d4998bccba0800000000000000
-      internalID: -6067271629409376533
+      spriteID: e9692fb090c5a774e8c6d73364971e9d
+      internalID: 1193689775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_2
+      name: flash_lightning_2
       rect:
         serializedVersion: 2
         x: 32
@@ -205,16 +205,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d9296d52012caf50800000000000000
-      internalID: 6893921423638211028
+      spriteID: 18847d136d950be4287ba7929af24076
+      internalID: 1012944976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_3
+      name: flash_lightning_3
       rect:
         serializedVersion: 2
         x: 48
@@ -227,16 +227,38 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 179a4a43915c66250800000000000000
-      internalID: 5937649870782638449
+      spriteID: 617ab75f10bcf5e4284c95213257896b
+      internalID: -1380034562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_4
+      name: flash_lightning_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902cd57c72eb7c44dab74a81ee3a2b3e
+      internalID: 1443603509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_lightning_5
       rect:
         serializedVersion: 2
         x: 80
@@ -249,16 +271,38 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9cab018a4c14119f0800000000000000
-      internalID: -499545770772350263
+      spriteID: 532028166924aed4cbe14847d38545cd
+      internalID: -234642394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_5
+      name: flash_lightning_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25214f2b38a3914380fc4ef15efbd34
+      internalID: 500699433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_lightning_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,16 +315,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4518ace6224f13900800000000000000
-      internalID: 662579048925004116
+      spriteID: 38d47dc3892952b45909862826215814
+      internalID: -408462068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_6
+      name: flash_lightning_8
       rect:
         serializedVersion: 2
         x: 128
@@ -293,16 +337,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d835c71c030705040800000000000000
-      internalID: 4634327371271132045
+      spriteID: 30c6026dcc249994f82862cf1dc29fe3
+      internalID: -2120171215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_7
+      name: flash_lightning_9
       rect:
         serializedVersion: 2
         x: 144
@@ -315,16 +359,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 37fdf726d055291f0800000000000000
-      internalID: -1039675047993680013
+      spriteID: 026be740297a07f4993b03eda652e731
+      internalID: -1611723235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_8
+      name: flash_lightning_10
       rect:
         serializedVersion: 2
         x: 160
@@ -337,16 +381,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0a10bfb21f8b7ccc0800000000000000
-      internalID: -3690778023642332768
+      spriteID: 4507ca7ac2b95d849a518bfe107b83ec
+      internalID: 926127340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_9
+      name: flash_lightning_11
       rect:
         serializedVersion: 2
         x: 176
@@ -359,16 +403,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c6ff324c2c6c4ff0800000000000000
-      internalID: -50546558462069056
+      spriteID: 9c6368f0dea1b9d44922fd2addac11f1
+      internalID: 1518053409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_10
+      name: flash_lightning_12
       rect:
         serializedVersion: 2
         x: 192
@@ -381,16 +425,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ab16265bdac1c5330800000000000000
-      internalID: 3700864526189748666
+      spriteID: 4cb43fae9223fd5438f88f18b716c142
+      internalID: 2094994313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_11
+      name: flash_lightning_13
       rect:
         serializedVersion: 2
         x: 208
@@ -403,16 +447,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5f015971a45e08650800000000000000
-      internalID: 6233233990666752245
+      spriteID: 8b310ada864c46f439051cb3ae4060b3
+      internalID: -585767187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_12
+      name: flash_lightning_14
       rect:
         serializedVersion: 2
         x: 224
@@ -427,14 +471,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 784557ede09f5934a8af58d9eadb7b17
-      internalID: 757298097
+      spriteID: cd9fc4f79117ace48a3990cf4cdc8441
+      internalID: 1265629825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_13
+      name: flash_lightning_15
       rect:
         serializedVersion: 2
         x: 240
@@ -449,14 +493,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a576202caa15db14b860eac897f6ddd3
-      internalID: -1837812530
+      spriteID: 451f7fb22c9e12047af93c99455a32c6
+      internalID: 1016236417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_14
+      name: flash_lightning_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe31b389c99ac44898bcb524935a944
+      internalID: 1405069961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_lightning_17
       rect:
         serializedVersion: 2
         x: 272
@@ -471,14 +537,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7360e2278b80f904b9493487e459221a
-      internalID: -1494869614
+      spriteID: 9e69e71d49860794eb8852cdef39c1fe
+      internalID: 1063261481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_15
+      name: flash_lightning_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a548f875b78ffb3409a3f8e4c2df1b69
+      internalID: -1806783827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_lightning_19
       rect:
         serializedVersion: 2
         x: 304
@@ -493,14 +581,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d46b31180df8ec147bf54032ec477c93
-      internalID: -539330844
+      spriteID: 298df2656b66fbb4c8fa75305c684724
+      internalID: -1640011547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_16
+      name: flash_lightning_20
       rect:
         serializedVersion: 2
         x: 320
@@ -515,14 +603,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da76427600326e94495a44229580bfe8
-      internalID: -803597836
+      spriteID: d0b04e67478863c4a8e7162ed3131043
+      internalID: 160977834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_17
+      name: flash_lightning_21
       rect:
         serializedVersion: 2
         x: 336
@@ -537,14 +625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f27078e2669aed4d95198766a44f345
-      internalID: -1743896211
+      spriteID: 02721cf2b136b884184916263f2f5c53
+      internalID: -1167113835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_18
+      name: flash_lightning_22
       rect:
         serializedVersion: 2
         x: 352
@@ -559,14 +647,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a17df53f2a7e27d409c964fbffc81409
-      internalID: 649355487
+      spriteID: 1a66f26e25acd2347bd6f77056620e93
+      internalID: 420213393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash lightning_19
+      name: flash_lightning_23
       rect:
         serializedVersion: 2
         x: 368
@@ -581,8 +669,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f084cb531b6bccf4481b7d07e7d6dbbc
-      internalID: -1682074360
+      spriteID: a923cef4d3f62f749ad2ea7919a315bf
+      internalID: 1490044179
       vertices: []
       indices: 
       edges: []
@@ -601,28 +689,32 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":true,"isAlternate":false}'
     nameFileIdTable:
-      flash lightning_0: 2517443301993727532
-      flash lightning_1: -6067271629409376533
-      flash lightning_10: 3700864526189748666
-      flash lightning_11: 6233233990666752245
-      flash lightning_12: 757298097
-      flash lightning_13: -1837812530
-      flash lightning_14: -1494869614
-      flash lightning_15: -539330844
-      flash lightning_16: -803597836
-      flash lightning_17: -1743896211
-      flash lightning_18: 649355487
-      flash lightning_19: -1682074360
-      flash lightning_2: 6893921423638211028
-      flash lightning_3: 5937649870782638449
-      flash lightning_4: -499545770772350263
-      flash lightning_5: 662579048925004116
-      flash lightning_6: 4634327371271132045
-      flash lightning_7: -1039675047993680013
-      flash lightning_8: -3690778023642332768
-      flash lightning_9: -50546558462069056
+      flash_lightning_0: -559244132
+      flash_lightning_1: 1193689775
+      flash_lightning_10: 926127340
+      flash_lightning_11: 1518053409
+      flash_lightning_12: 2094994313
+      flash_lightning_13: -585767187
+      flash_lightning_14: 1265629825
+      flash_lightning_15: 1016236417
+      flash_lightning_16: 1405069961
+      flash_lightning_17: 1063261481
+      flash_lightning_18: -1806783827
+      flash_lightning_19: -1640011547
+      flash_lightning_2: 1012944976
+      flash_lightning_20: 160977834
+      flash_lightning_21: -1167113835
+      flash_lightning_22: 420213393
+      flash_lightning_23: 1490044179
+      flash_lightning_3: -1380034562
+      flash_lightning_4: 1443603509
+      flash_lightning_5: -234642394
+      flash_lightning_6: 500699433
+      flash_lightning_7: -408462068
+      flash_lightning_8: -2120171215
+      flash_lightning_9: -1611723235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
