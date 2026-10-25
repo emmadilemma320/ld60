@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private int coyote = 0;
     private int jumpCounter;
     public PhysicsObject p;
+    public ParticleSystem DashParticleSystem;
 
     private Animator anim;
     public SpriteRenderer flash;
@@ -91,6 +92,11 @@ public class Player : MonoBehaviour
 
     void update_dash_timer(){
         if (dashTimeLeft > 0){
+            var emitParams = new ParticleSystem.EmitParams();
+            emitParams.position = new Vector3(transform.position.x, 0, transform.position.y); // The Y and Z postions need switching, why unity?
+            emitParams.rotation = -transform.eulerAngles.z; 
+            // Debug.Log(transform.rotation);
+            DashParticleSystem.Emit(emitParams, 1);
             dashTimeLeft -= Time.fixedDeltaTime;
             transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
             if (dashTimeLeft <= 0.0001){

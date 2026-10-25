@@ -96,6 +96,7 @@ MonoBehaviour:
   on: 1
   spark_rest_time: 2
   on_timer: 0
+  withinRange: 0
 --- !u!95 &2690130985325828981
 Animator:
   serializedVersion: 7
@@ -164,10 +165,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -468022299
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7120709017205646678, guid: 3bef393805f3bb0409d7428988291648, type: 3}
+  m_Sprite: {fileID: -3421936103367899815, guid: 773355981c8713f459d5fb32d52213c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
