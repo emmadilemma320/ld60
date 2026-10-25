@@ -90,13 +90,22 @@ public class Player : MonoBehaviour
         flash.color = new Color(1.0f, 0.0f, 0.0f, immunityTimerTimeLeft / 6.0f);
     }
 
+    void emit_dash_particle(){
+        if (DashParticleSystem){
+            var emitParams = new ParticleSystem.EmitParams();
+            // Switching the Y and Z postions since positons on a diffrent coordinate system. Why Unity?
+            emitParams.position = new Vector3(transform.position.x, 0, transform.position.y); 
+            emitParams.rotation = -transform.eulerAngles.z;
+            DashParticleSystem.Emit(emitParams, 1);
+        }else{
+            throw new System.Exception("You need to give player a dash particle emitter reference!");
+            // Debug.LogException(new System.Exception());
+        }
+    }
+
     void update_dash_timer(){
         if (dashTimeLeft > 0){
-            var emitParams = new ParticleSystem.EmitParams();
-            emitParams.position = new Vector3(transform.position.x, 0, transform.position.y); // The Y and Z postions need switching, why unity?
-            emitParams.rotation = -transform.eulerAngles.z; 
-            // Debug.Log(transform.rotation);
-            DashParticleSystem.Emit(emitParams, 1);
+            emit_dash_particle();
             dashTimeLeft -= Time.fixedDeltaTime;
             transform.Rotate(Vector3.forward * dashRotationSpeed * Time.deltaTime * dashDirection * -1);
             if (dashTimeLeft <= 0.0001){
