@@ -10,12 +10,10 @@ To Do:
 - More levels
 - Level based goals
 - Level transition
-- Better spark effect - Quinn
 - Pistons should squish player? + Probably not that easy to do
 - A more clear down state for buttons
 - Tutorial signage
 - player death animation - Quinn
-- Dash trail- puff of smoke where you were, trail to where you are - quinn
 - menu/level select
 - audio level controls
 - puzzles w/ actual mechanics
@@ -33,8 +31,7 @@ To Do:
     - or have them load in only when within distance
 - indicators of where to go/how to solve levels (like with jumps and shit) - Art Quinn
     - signs that point in the direction, or suggest what move should be taken
-- skinny wires that indicate what objects are connected (coloured wires) - Quinn
-    - can't stand on them
+- Implement skinny wires(can't stand on them) and more coloured wires
 - Timer as a visual signal that something will take a long time to activate
 - Slopes -Kent
 
@@ -58,6 +55,9 @@ emma to-do:
 
 
 done:
+    - Art for skinny wires and standing wires
+    - Dash Trail
+    - Better spark effect
     - fan trigger only on player
     - add fan sprite 
         - auto-tile palette from new floor tilesheet
