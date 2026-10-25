@@ -98,8 +98,7 @@ public class Player : MonoBehaviour
             emitParams.rotation = -transform.eulerAngles.z;
             DashParticleSystem.Emit(emitParams, 1);
         }else{
-            throw new System.Exception("You need to give player a dash particle emitter reference!");
-            // Debug.LogException(new System.Exception());
+            Debug.LogException(new System.Exception("You need to give player a dash particle emitter reference!"));
         }
     }
 
