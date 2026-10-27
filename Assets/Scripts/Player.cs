@@ -200,11 +200,11 @@ public class Player : MonoBehaviour
         {
             p.vY += 2f;
         }
-        if (Input.GetKeyDown(KeyCode.Q) && dashTimeLeft <= 0)
+        if (Input.GetKey(KeyCode.Q) && dashTimeLeft <= 0)
         {
             start_dash();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKey(KeyCode.R))
         {
             die();
         }
