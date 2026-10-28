@@ -2,20 +2,16 @@ using UnityEngine;
 
 public class check : MonoBehaviour
 {
-    private SpriteRenderer s;
+    private SpriteRenderer renderer;
+    public Sprite sprite_on;
+    public Sprite sprite_off;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        s = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer.sprite = sprite_off;
     }
 
     public void turnon() {
-        s.enabled = true;
+        renderer.sprite = sprite_on;
     }
 }
