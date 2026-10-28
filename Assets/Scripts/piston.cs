@@ -8,7 +8,6 @@ public class piston : MonoBehaviour {
     //public float speed = 0.1f;
     public Boolean immeuble;
     public float speed_multi = 1f;
-    public Boolean start_up;
     public Boolean diff_start_delay;
     public float start_delay;
 
