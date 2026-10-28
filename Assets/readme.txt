@@ -23,7 +23,7 @@ To Do:
     - Circuit completion?
     - turn on all lights
 - fast pistons boost you?
-- Add wait time and stagger to buttons and pistons - Emma
+- Add wait time and stagger to buttons - Emma
 - improve checkpoint sprite code - Emma
 - more button colours/wires
 - Solve FMOD command buffer issues - Julian:
