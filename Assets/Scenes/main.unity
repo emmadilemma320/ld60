@@ -1463,11 +1463,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -2171,11 +2175,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -4798,11 +4806,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -43607,11 +43619,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -45356,11 +45372,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -77431,11 +77451,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -108869,11 +108893,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -109005,11 +109033,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -111086,11 +111118,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -112025,11 +112061,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -112461,11 +112501,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -115052,11 +115096,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time
@@ -116141,11 +116189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: start_up
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: speed_multi
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
+      propertyPath: diff_start_delay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654941025795586578, guid: 32cacd19daaf6454791c44e2c25c7e2c, type: 3}
       propertyPath: piston_rest_time

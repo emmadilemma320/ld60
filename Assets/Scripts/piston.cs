@@ -9,6 +9,8 @@ public class piston : MonoBehaviour {
     public Boolean immeuble;
     public float speed_multi = 1f;
     public Boolean start_up;
+    public Boolean diff_start_delay;
+    public float start_delay;
 
     private Boolean button_controlled;
     private int stack; 
@@ -29,8 +31,10 @@ public class piston : MonoBehaviour {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         // variable set-up
-        timer = piston_rest_time;
-        moving = start_up; up = true;
+       
+        timer = diff_start_delay ? start_delay : piston_rest_time;
+        up = true;
+        
         stack = 0;
 
         middle = this.transform.GetChild(0);
