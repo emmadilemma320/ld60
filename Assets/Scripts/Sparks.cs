@@ -12,6 +12,8 @@ public class sparks : MonoBehaviour
     private SpriteRenderer sprite;
 
     public float spark_rest_time = 2f;
+    public Boolean diff_start_delay;
+    public float start_delay;
     public Boolean on_timer;
     private float timer;
 
@@ -29,7 +31,7 @@ public class sparks : MonoBehaviour
 
     void Start() {
         //print(name+" starting");
-        timer = spark_rest_time;
+        timer = diff_start_delay ? start_delay : spark_rest_time;
         anim = gameObject.transform.GetComponent<Animator>();
         sprite = gameObject.transform.GetComponent<SpriteRenderer>();
 
