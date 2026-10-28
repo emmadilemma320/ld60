@@ -24,7 +24,6 @@ To Do:
     - turn on all lights
 - fast pistons boost you?
 - Add wait time and stagger to buttons - Emma
-- improve checkpoint sprite code - Emma
 - more button colours/wires
 - Solve FMOD command buffer issues - Julian:
     - cull out of distance instances in FMOD
@@ -54,6 +53,7 @@ To Do:
 
 done:
     - improve piston button pushed when it currently moving - Emma
+    - improve checkpoint sprite code - Emma
     - Art for skinny wires and standing wires
     - Dash Trail
     - Better spark effect
