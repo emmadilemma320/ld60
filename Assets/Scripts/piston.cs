@@ -11,6 +11,7 @@ public class piston : MonoBehaviour {
     public Boolean start_up;
 
     private Boolean button_controlled;
+    private int stack; 
     private float timer;
     private Boolean moving;
     private Boolean up; // true if the piston is currently extended (default)
@@ -30,6 +31,7 @@ public class piston : MonoBehaviour {
         // variable set-up
         timer = piston_rest_time;
         moving = start_up; up = true;
+        stack = 0;
 
         middle = this.transform.GetChild(0);
         platform = middle.GetChild(0);
@@ -38,9 +40,10 @@ public class piston : MonoBehaviour {
    private float new_y;
     void FixedUpdate(){
         if(immeuble) return;
-        if (!(moving || button_controlled)) timer -= Time.fixedDeltaTime;
+        if (!(moving || (button_controlled && (stack == 0)))) timer -= Time.fixedDeltaTime;
         
-        if (timer <= 0 && !button_controlled && !moving) {
+        if (timer <= 0 && !moving && (!button_controlled || stack > 0)) {
+            if (button_controlled) stack--;
             timer = piston_rest_time;
             moving = true;
         }
@@ -89,6 +92,8 @@ public class piston : MonoBehaviour {
     public void move() {
         if (!moving) {
             moving = true;
+        } else {
+            stack++;
         }
     }
 }
